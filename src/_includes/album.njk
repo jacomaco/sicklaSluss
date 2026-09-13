@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<p><a class="back-link" href="{{ '/bildreportage/' | url }}">&laquo; Alla bildreportage</a></p>
+
+<h1>{{ title }}</h1>
+<p class="newsdate">{{ date | readableDate }}</p>
+
+<div class="gallery" data-gallery>
+  {% for img in images %}
+    {% albumImg folder, img, title ~ " – bild " ~ loop.index %}
+  {% endfor %}
+</div>
+
+<script src="{{ '/assets/js/lightbox.js' | url }}" defer></script>

@@ -25,18 +25,21 @@ npm run build    # bygger sidan till _site/
 
 ```
 sicklaSluss/
-├── eleventy.config.js       # Eleventy-konfiguration
+├── eleventy.config.js       # Eleventy-konfiguration + bildgenerering
 ├── package.json             # npm-skript (dev/build)
 ├── templates/
-│   └── nyhet-mall.md        # Mall att kopiera när du lägger till en nyhet
+│   ├── nyhet-mall.md        # Mall att kopiera när du lägger till en nyhet
+│   └── bildreportage-mall.md# Mall för ett nytt bildalbum
 └── src/
     ├── _data/site.json      # Webbplatsuppgifter, meny, telefonnummer, sponsorer
     ├── _includes/           # Layout och partials (header/nav/sidebar/footer)
-    ├── assets/css/main.css  # All styling
-    ├── static/images/       # Alla bilder (logga, slussbilder, sponsorer)
+    ├── assets/              # CSS + JS (ljuslåda för bildalbum)
+    ├── images/bildreportage/# Originalfoton per album (byggs ned av eleventy-img)
+    ├── static/images/       # Alla övriga bilder (logga, slussbilder, sponsorer)
     ├── static/pdf/          # PDF:er läggs här
     ├── *.md                 # Sidorna (index, att-slussa, historik …)
-    └── nyheter/*.md         # Varje nyhet är en egen Markdown-fil
+    ├── nyheter/*.md         # Varje nyhet är en egen Markdown-fil
+    └── bildreportage/*.md   # Varje album är en egen Markdown-fil
 ```
 
 ## Så här lägger du till en nyhet (viktigast för redaktionen)
@@ -61,20 +64,27 @@ summary: Här är en kort sammanfattning som visas på startsidan.
 
 ## Så här lägger du till ett bildreportage
 
-1. Skapa mappen `src/bildreportage/YYYY-MM-DD-kort-titel/`.
-2. Lägg bilderna i `src/static/images/bildreportage/YYYY-MM-DD-kort-titel/`.
-3. Skapa `src/bildreportage/YYYY-MM-DD-kort-titel.md` med front matter:
+1. Skapa en mapp `src/images/bildreportage/YYYY-MM-DD-kort-titel/` och lägg in fotona där (jpeg/png).
+2. Kopiera `templates/bildreportage-mall.md` till `src/bildreportage/YYYY-MM-DD-kort-titel.md` och fyll i `title`, `date`, `folder` samt listan över bildfiler.
+3. Spara – bygget genererar automatiskt tumnaglar och fullstora webboptimerade bilder (webp/jpeg), och albumet dyker upp på **Bildreportage**.
+
+Bilder publiceras endast i webboptimerad form; originalfilerna finns kvar i repot och skickas **inte** till besökarna.
+
+Front matter i en albumfil ser ut så här:
 
 ```yaml
 ---
-layout: base.njk
-title: Min rubrik
+layout: album.njk
+title: 2026-06-01 Slussdagen
 date: 2026-06-01
-tags: album
+tags:
+  - album
+folder: 2026-06-01-slussdagen
+images:
+  - "01_foto.jpg"
+  - "02_foto.jpg"
 ---
 ```
-
-4. Skriv in bilderna i filen med `![alt](/static/images/bildreportage/…​)` – du får en automatisk lista under »Bildreportage«.
 
 ## Så lägger du till en PDF
 
