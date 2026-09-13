@@ -29,5 +29,5 @@ description: Föreningen Sicklaslussen – ideell förening som räddat och för
 
 <h3>Dokument</h3>
 <ul>
-  <li>› <strong>Informationsblad</strong> – i A4-format att vikas till en A5-folder</li>
+  <li>› <a href="{{ '/static/pdf/Informationsblad.pdf' | url }}">Informationsblad</a> – i A4-format att vikas till en A5-folder</li>
 </ul>
