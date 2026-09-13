@@ -2,8 +2,10 @@
 layout: base.njk
 title: In English
 description: Welcome to Sicklaslussen – a hand-operated canal lock in Stockholm
+h1: Welcome to Sicklaslussen
+leadImage: /static/images/in-english/Lock_001.jpg
+leadImageAlt: Sicklaslussen
 ---
-# Welcome to Sicklaslussen
 
 Sicklaslussen is a historic, hand-operated canal lock in Stockholm that connects Hammarby Sjö / Saltsjön with Sicklasjön and Järlasjön. The waterway – known as "Järlaleden" – has been used by boaters since the Viking age.
 

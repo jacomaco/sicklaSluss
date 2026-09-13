@@ -18,6 +18,10 @@
     </nav>
 
     <main class="content">
+      {% if leadImage %}
+      <h1>{{ h1 | default(title) }}</h1>
+      <img class="lead-img" src="{{ leadImage | url }}" alt="{{ leadImageAlt | default(h1 | default(title)) }}">
+      {% endif %}
       {{ content | safe }}
     </main>
 

@@ -233,8 +233,20 @@ content:
     path: src/in-english.md
     format: yaml-frontmatter
     fields:
+      - name: h1
+        label: Rubrik (välkomsttext)
+        type: string
+      - name: leadImage
+        label: Toppbild
+        type: image
+        options:
+          media: bilder
+          path: in-english
+      - name: leadImageAlt
+        label: Beskrivning av toppbilden
+        type: string
       - name: title
-        label: Rubrik
+        label: Rubrik (meny/tabbläsare)
         type: string
       - name: description
         label: Beskrivning
