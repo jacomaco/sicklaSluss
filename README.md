@@ -39,6 +39,7 @@ sicklaSluss/
     ├── static/pdf/          # PDF:er läggs här
     ├── *.md                 # Sidorna (index, att-slussa, historik …)
     ├── nyheter/*.md         # Varje nyhet är en egen Markdown-fil
+    ├── historik/*.md        # Undersidor (t.ex. Ångslupar)
     └── bildreportage/*.md   # Varje album är en egen Markdown-fil
 ```
 
@@ -89,7 +90,7 @@ images:
 ## Så lägger du till en PDF
 
 1. Lägg filen i `src/static/pdf/...`
-2. Länka till den med `[länktext](/static/pdf/filnamn.pdf)`.
+2. Länka till den med `[länktext](/static/pdf/filnamn.pdf)` – även undersidor (t.ex. `src/historik/*.md`) kan länka pdf:er på samma sätt.
 
 Artikelfilerna (PDF + äldre htm-sidor) ligger under `src/static/artiklar/` och artikel-listan i `src/artiklar.md` pekar på dem lokalt.
 
