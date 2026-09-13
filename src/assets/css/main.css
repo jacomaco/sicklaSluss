@@ -1,0 +1,314 @@
+/* ==========================================================================
+   Sicklaslussen – klassisk & ren stil
+   ========================================================================== */
+
+:root {
+  --navy: #000040;
+  --navy-soft: #1a1a6d;
+  --link: #000090;
+  --link-hover: #000040;
+  --border: #d8dce6;
+  --bg-soft: #f4f6fb;
+  --text: #000040;
+  --max-width: 1150px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: #ffffff;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 3px solid var(--navy);
+  background: #ffffff;
+}
+
+.brand {
+  display: block;
+  text-align: center;
+  padding: 12px 16px;
+}
+
+.brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.content {
+  min-width: 0;
+}
+
+/* ---------- Sidebars ---------- */
+
+.sidebar-left {
+  order: 0;
+}
+
+.sidebar-right {
+  order: 0;
+}
+
+.nav-intro {
+  margin: 0 0 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.nav-list li {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-list a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: var(--link);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  background: var(--bg-soft);
+  color: var(--link-hover);
+}
+
+.nav-list a.active {
+  font-weight: bold;
+  color: var(--navy-soft);
+  border-left: 3px solid var(--navy);
+  padding-left: 7px;
+}
+
+.card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 14px 16px;
+  margin-bottom: 18px;
+}
+
+.card-title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.phone {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.phone a {
+  text-decoration: none;
+}
+
+.sponsor-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.sponsor-list li {
+  margin-bottom: 8px;
+}
+
+.sponsor-list img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-link {
+  font-size: 0.95rem;
+}
+
+/* ---------- Innehåll ---------- */
+
+.content h1 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.content h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin: 30px 0 10px;
+}
+
+.content h3 {
+  font-size: 1.15rem;
+  color: var(--navy-soft);
+  margin: 22px 0 8px;
+}
+
+.content p {
+  margin: 0 0 14px;
+}
+
+.content ul,
+.content ol {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.content li {
+  margin-bottom: 6px;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content a {
+  color: var(--link);
+}
+
+.content a:hover {
+  color: var(--link-hover);
+}
+
+.lead-img {
+  display: block;
+  margin: 0 auto 16px;
+  border: 1px solid var(--border);
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+.newsdate {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-list > li {
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-list > li:last-child {
+  border-bottom: 0;
+}
+
+.news-title {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+.readmore {
+  font-size: 0.95rem;
+}
+
+.notice {
+  background: var(--bg-soft);
+  border-left: 4px solid var(--navy);
+  padding: 10px 14px;
+}
+
+.legend {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 6px;
+}
+
+.content h1 small {
+  display: block;
+  font-size: 0.62em;
+  font-weight: normal;
+  color: var(--navy-soft);
+  margin-top: 6px;
+}
+
+ul.articles {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.articles li {
+  margin-bottom: 8px;
+  padding-left: 18px;
+  text-indent: -18px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 3px solid var(--navy);
+  background: var(--bg-soft);
+  padding: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+/* ---------- Responsivt: surfplatta / dator ---------- */
+
+@media (min-width: 780px) {
+  .layout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .sidebar-left {
+    order: -1;
+  }
+}
+
+@media (min-width: 1020px) {
+  .layout {
+    grid-template-columns: 200px minmax(0, 1fr) 210px;
+    gap: 26px;
+  }
+
+  .sidebar-right {
+    order: 2;
+  }
+}

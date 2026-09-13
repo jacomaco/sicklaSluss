@@ -1,0 +1,15 @@
+{
+  "name": "sicklasluss",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hemsida för Föreningen Sicklaslussen – statisk Eleventy-site",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "reload": "eleventy --serve --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

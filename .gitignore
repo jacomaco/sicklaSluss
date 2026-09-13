@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build output
+_site/
+
+# Local source dump of the old website (not part of the site)
+_source/
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} – {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    {% include "partials/header.njk" %}
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar sidebar-left" aria-label="Huvudmeny">
+      {% include "partials/nav.njk" %}
+    </nav>
+
+    <main class="content">
+      {{ content | safe }}
+    </main>
+
+    <aside class="sidebar sidebar-right">
+      {% include "partials/sidebar.njk" %}
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    {% include "partials/footer.njk" %}
+  </footer>
+</body>
+</html>
