@@ -3,27 +3,30 @@ layout: base.njk
 title: In English
 description: Welcome to Sicklaslussen – a hand-operated canal lock in Stockholm
 ---
+# Welcome to Sicklaslussen
 
-<h1>Welcome to Sicklaslussen</h1>
+Sicklaslussen is a historic, hand-operated canal lock in Stockholm that connects Hammarby Sjö / Saltsjön with Sicklasjön and Järlasjön. The waterway – known as "Järlaleden" – has been used by boaters since the Viking age.
 
-<p>Sicklaslussen is a historic, hand-operated canal lock in Stockholm that connects Hammarby Sjö / Saltsjön with Sicklasjön and Järlasjön. The waterway – known as "Järlaleden" – has been used by boaters since the Viking age.</p>
+The lock is open for boating **May 10 – September 27**. During this period there is free drop-in passage on Saturdays 10:30–11:30 and 16:00–17:00. At other times passage can be booked on our lock telephone: [070-7816547](tel:+46707816547).
 
-<p>The lock is open for boating <strong>May 10 – September 27</strong>. During this period there is free drop-in passage on Saturdays 10:30–11:30 and 16:00–17:00. At other times passage can be booked on our lock telephone: <a href="tel:+46707816547">070-7816547</a>.</p>
+## Exhibition days (Slussdagar)
 
-<h2>Exhibition days (Slussdagar)</h2>
-<ul>
-  <li>May 23 – free passage 10:00–16:00</li>
-  <li>August 30 – free passage 10:00–16:00, with guided electric-boat tours between Hammarby Sjöstad and Järlasjön</li>
-</ul>
+- May 23 – free passage 10:00–16:00
+- August 30 – free passage 10:00–16:00, with guided electric-boat tours between Hammarby Sjöstad and Järlasjön
 
-<h2>More information</h2>
-<ul>
-  <li>› <a href="{{ '/att-slussa/' | url }}">Att slussa</a> – opening hours, fees and dimensions (in Swedish)</li>
-  <li>› <a href="{{ '/historik/' | url }}">Historik</a> – the history of the lock (in Swedish)</li>
-  <li>› <a href="{{ '/nyheter/' | url }}">Nyheter</a> – news and calendar (in Swedish)</li>
-  <li>› <a href="{{ '/om-foreningen/' | url }}">Om föreningen</a> – about the association (in Swedish)</li>
-</ul>
+## More information
 
-<p>The lock is owned by the City of Stockholm and Nacka Municipality and operated on a voluntary basis by <strong>Föreningen Sicklaslussen</strong>.</p>
+- › [Att slussa]({{ '/att-slussa/' | url }}) – opening hours, fees and dimensions (in Swedish)
+- › [Historik]({{ '/historik/' | url }}) – the history of the lock (in Swedish)
+- › [Nyheter]({{ '/nyheter/' | url }}) – news and calendar (in Swedish)
+- › [Om föreningen]({{ '/om-foreningen/' | url }}) – about the association (in Swedish)
 
-<p>Contact: <a href="mailto:webmaster@sicklasluss.se">webmaster@sicklasluss.se</a></p>
+The lock is owned by the City of Stockholm and Nacka Municipality and operated on a voluntary basis by **Föreningen Sicklaslussen**.
+
+Contact: [webmaster@sicklasluss.se](mailto:webmaster@sicklasluss.se)
+
+
+
+"""  
+CMS-test  
+"""
