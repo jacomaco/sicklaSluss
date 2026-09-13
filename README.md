@@ -9,6 +9,7 @@ Sidan är även tillgänglig på engelska och deployas till GitHub Pages.
 |--------------------|--------------------------------------------------|
 | Statisk byggare     | [Eleventy](https://www.11ty.dev) (npm)           |
 | Innehåll            | Markdown i `src/`                                |
+| Innehållshantering  | [Pages CMS](https://app.pagescms.org) (i webbläsaren) |
 | Språk/teckenkoder  | `src/_includes/base.njk` + `src/assets/css/`     |
 | Byggresultat        | `_site/`                                         |
 | Hosting            | GitHub Pages (statiskt) – domän pekas via DNS     |
@@ -28,6 +29,7 @@ sicklaSluss/
 ├── .pages.yml                # Pages CMS (innehållshantering i webbläsaren)
 ├── eleventy.config.js       # Eleventy-konfiguration + bildgenerering
 ├── package.json             # npm-skript (dev/build)
+├── docs/                    # Guider (CMS, DNS/överlämning, förslag till styrelsen)
 ├── templates/
 │   ├── nyhet-mall.md        # Mall att kopiera när du lägger till en nyhet
 │   ├── bildreportage-mall.md# Mall för ett nytt bildalbum
@@ -49,11 +51,17 @@ sicklaSluss/
 
 ## Så här lägger du till en nyhet (viktigast för redaktionen)
 
+**Enklast via CMS:et:** öppna `https://app.pagescms.org/<ägare>/sicklaSluss` → **Nyheter** → **Ny nyhet** → fyll i rubrik, datum, sammanfattning och text → **Spara**. Publiceringen sker automatiskt.
+
+Vill du hellre jobba direkt i arkivet (t.ex. för en längre text med bilder):
+
 1. Gå till `src/nyheter/` i repot.
 2. Kopiera mallen från `templates/nyhet-mall.md`.
 3. Döp den nya filen till `YYYY-MM-DD-kort-om-nyheten.md` (t.ex. `2026-06-01-slussdagen.md`).
 4. Fyll i `date`, `title` och `summary` i front matter (upptill i filen).
 5. Spara och lägg upp ändringen – nyheten dyker automatiskt upp på **startsidan** och under **Nyheter**.
+
+`layout` och `tags` behöver inte fyllas i för hand – de tilldelas automatiskt via `src/nyheter/nyheter.11tydata.json`.
 
 Front matter i en nyhetsfil ser ut så här:
 
@@ -68,6 +76,10 @@ summary: Här är en kort sammanfattning som visas på startsidan.
 ```
 
 ## Så här lägger du till ett bildreportage
+
+**Enklast via CMS:et:** **Bildreportage** → **Nytt album** → fyll i rubrik, datum och `folder`-namn. Ladda sedan upp bilderna via mediabiblioteket **Bildreportagebilder** (i en mapp med exakt samma namn som `folder`-fältet) och spara. Galleriet byggs automatiskt.
+
+Direkt i arkivet:
 
 1. Skapa en mapp `src/images/bildreportage/YYYY-MM-DD-kort-titel/` och lägg in fotona där (jpeg/png).
 2. Kopiera `templates/bildreportage-mall.md` till `src/bildreportage/YYYY-MM-DD-kort-titel.md` och fyll i `title`, `date` och `folder`.
@@ -93,7 +105,11 @@ Bildlistan behövs inte längre – galleriet byggs automatiskt utifrån mappen 
 
 ## Så här lägger du till en artikel
 
-Artiklarna i arkivet är metadata-filer i `src/artiklar/` som renderas på sidan **Artiklar**. Varje fil pekar på en PDF/htm i `src/static/artiklar/`.
+Artiklarna i arkivet är metadata-filer i `src/artiklar/` som renderas på sidan **Artiklar**. Varje artikel pekar på en PDF/htm i `src/static/artiklar/`.
+
+**Enklast via CMS:et:** **Artiklar** → **Ny artikel** → välj rubrik, `label`, datum, `type` (A/I/N) och `group` (ny/ark), lägg till filen via mediabiblioteket **Dokument** om den inte redan ligger där, och spara.
+
+Direkt i arkivet:
 
 1. Lägg filen (pdf/htm) i `src/static/artiklar/`.
 2. Kopiera `templates/artikel-mall.md` till `src/artiklar/` med ett kort, unikt filnamn.
@@ -110,7 +126,9 @@ Artikelfilerna (PDF + äldre htm-sidor) ligger under `src/static/artiklar/` och 
 
 ## Innehållshantering med Pages CMS
 
-Repot är anslutet till [Pages CMS](https://app.pagescms.org) via konfigurationen i `.pages.yml`. Redaktionen kan då redigera nyheter, bildreportage, artiklar, sidorna och webbplatsinställningarna direkt i webbläsaren utan att röra git.
+Repot är anslutet till [Pages CMS](https://app.pagescms.org) via konfigurationen i `.pages.yml`. Redaktionen kan då redigera nyheter, bildreportage, artiklar, sidorna och webbplatsinställningarna direkt i webbläsaren utan att röra git. Funktionen är testad och verifierad mot sajten.
+
+Hur du som medlem skapar ett GitHub-konto, blir medarbetare i repot och ansluter till CMS:et finns utförligt beskrivet i [docs/guide-anslut-cms.md](docs/guide-anslut-cms.md).
 
 1. En administratör för repots GitHub-konto installerar Pages CMS GitHub App och bjuder in redaktionen (Settings → Collaborators).
 2. Öppna `https://app.pagescms.org/<ägare>/sicklaSluss` och logga in.
@@ -120,6 +138,12 @@ Notera:
 - `settings.content.merge: true` i `.pages.yml` gör att CMS:et bevarar front matter som `layout`/`tags` när en fil sparas.
 - För att ett nytt album ska visa bilder måste mappen `src/images/bildreportage/<folder>/` finnas med samma namn som `folder`-fältet. Ladda upp bilder via mediabiblioteket "Bildreportagebilder" i CMS:et.
 - Förstasidan (`src/index.md`) innehåller loopar och tas därför inte fram som ett vanligt CMS-fält – den redigeras i filen direkt.
+
+## Dokumentation (docs/)
+
+- [docs/guide-anslut-cms.md](docs/guide-anslut-cms.md) – skapa GitHub-konto, bli medarbetare och ansluta till Pages CMS (riktad till redaktörer).
+- [docs/guide-dns-och-github.md](docs/guide-dns-och-github.md) – domän (DNS), GitHub-samarbete och överlämning.
+- [docs/forslag-till-styrelsen.md](docs/forslag-till-styrelsen.md) – bakgrund/förslag till styrelsen inför flytten till GitHub Pages.
 
 ## Så här publicerar du (deploy)
 

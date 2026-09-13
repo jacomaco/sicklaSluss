@@ -116,6 +116,10 @@ När det är accepterat kan Föreningen:
 - pusha och därmed utlösa automatisk publicering,
 - klona repot till egna datorer.
 
+> För de medlemmar som sedan ska *redigera* webbplatsen (nyheter, bildreportage,
+> artiklar) finns en steg-för-steg-guide: `docs/guide-anslut-cms.md` (skapa
+> GitHub-konto, bli medarbetare och ansluta till Pages CMS).
+
 > **Tips:** Be Föreningen sätta upp **2FA** på kontot och förvara en säkerhetskopia
 > av inloggningen (t.ex. hos styrelsen), så kontot inte är knutet till en enda person.
 

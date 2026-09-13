@@ -29,7 +29,7 @@ Domänen `sicklasluss.se` och e-posten behålls som i dag.
 
 | Punkt | Vad föreningen får |
 |---|---|
-| **Enkelhet** | Nyhet publiceras genom att klistra in text på en webbsida (GitHub) – inga FTP-program, inga teman, inga plugins |
+| **Enkelhet** | Nyhet publiceras genom att klistra in text i webbredigeraren **Pages CMS** (ingen FTP, inga teman, inga plugins – bara ett GitHub-konto) |
 | **Underhållsrisk** | Inget server- eller programvaruunderhåll. Inga "uppdatera WordPress" att tänka på. Allt publiceras automatiskt vid varje ändring |
 | **Säkerhet** | Gratis SSL/HTTPS, säkert system som hanteras av Microsoft (GitHub) |
 | **Stabilitet** | Alla ändringar sparas och kan återställas (versionshistorik). Sajten funkar även om personen som byggde den slutar – allt är dokumenterat |
