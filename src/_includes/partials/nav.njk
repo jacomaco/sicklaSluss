@@ -5,7 +5,7 @@
   <ul class="nav-list">
     {% for item in site.nav %}
     <li>
-      <a href="{{ item.url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      <a href="{{ item.url | url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
     </li>
     {% endfor %}
   </ul>

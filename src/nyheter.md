@@ -6,7 +6,7 @@ description: Aktuella nyheter från Föreningen Sicklaslussen
 
 <h1>Nyheter</h1>
 
-<img class="lead-img" src="/static/images/nyheter/Nyheter_001.jpg" alt="Sicklaslussen">
+<img class="lead-img" src="{{ '/static/images/nyheter/Nyheter_001.jpg' | url }}" alt="Sicklaslussen">
 
 <div class="card">
   <h2 class="card-title">Kalendarium 2026</h2>
@@ -17,14 +17,14 @@ description: Aktuella nyheter från Föreningen Sicklaslussen
 <ul class="news-list">
 {% for post in collections.news | reverse %}
   <li>
-    <h2 class="news-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <h2 class="news-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
     <p><span class="newsdate">{{ post.date | shortDate }}</span></p>
     {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
-    <p class="readmore"><a href="{{ post.url }}">Läs mer …</a></p>
+    <p class="readmore"><a href="{{ post.url | url }}">Läs mer …</a></p>
   </li>
 {% endfor %}
 </ul>
 
 <hr class="rule">
 
-<p class="readmore"><a href="/">Tillbaka till startsidan</a></p>
+<p class="readmore"><a href="{{ '/' | url }}">Tillbaka till startsidan</a></p>

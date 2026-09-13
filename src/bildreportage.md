@@ -12,7 +12,7 @@ description: Bildreportage från Sicklaslussen – album läggs upp fortlöpande
 <ul class="news-list">
 {% for album in collections.albums | reverse %}
   <li>
-    <h2 class="news-title"><a href="{{ album.url }}">{{ album.data.title }}</a></h2>
+    <h2 class="news-title"><a href="{{ album.url | url }}">{{ album.data.title }}</a></h2>
     <p><span class="newsdate">{{ album.date | shortDate }}</span></p>
   </li>
 {% endfor %}

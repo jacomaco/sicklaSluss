@@ -18,10 +18,10 @@ description: Welcome to Sicklaslussen – a hand-operated canal lock in Stockhol
 
 <h2>More information</h2>
 <ul>
-  <li>› <a href="/att-slussa/">Att slussa</a> – opening hours, fees and dimensions (in Swedish)</li>
-  <li>› <a href="/historik/">Historik</a> – the history of the lock (in Swedish)</li>
-  <li>› <a href="/nyheter/">Nyheter</a> – news and calendar (in Swedish)</li>
-  <li>› <a href="/om-foreningen/">Om föreningen</a> – about the association (in Swedish)</li>
+  <li>› <a href="{{ '/att-slussa/' | url }}">Att slussa</a> – opening hours, fees and dimensions (in Swedish)</li>
+  <li>› <a href="{{ '/historik/' | url }}">Historik</a> – the history of the lock (in Swedish)</li>
+  <li>› <a href="{{ '/nyheter/' | url }}">Nyheter</a> – news and calendar (in Swedish)</li>
+  <li>› <a href="{{ '/om-foreningen/' | url }}">Om föreningen</a> – about the association (in Swedish)</li>
 </ul>
 
 <p>The lock is owned by the City of Stockholm and Nacka Municipality and operated on a voluntary basis by <strong>Föreningen Sicklaslussen</strong>.</p>

@@ -90,6 +90,8 @@ Servern publikläggs med:
 - **Lokalt:** `npm run build` och ladda upp innehållet i `_site/` 
 - **Automatiskt:** se GitHub Actions (`deploy.yml`) som bygger och publicerar till GitHub Pages vid push till `main`.
 
+> **OBS (tillfälligt):** `pathPrefix` är satt till `"sicklaSluss"` i `eleventy.config.js` eftersom sidan just nu testas på `jacomaco.github.io/sicklaSluss/`. Alla interna länkar använder `url`-filtret och funkar därför automatiskt på vilken sökväg som helst. När sajten ska driftsättas på riktiga domänen `sicklasluss.se` ändrar man bara `pathPrefix` till `"/"` (eller tar bort raden) och lägger tillbaka `src/CNAME` med innehållet `sicklasluss.se`.
+
 Peka `sicklasluss.se` mot GitHub Pages (A-records) och behåll MX för e-post (Simply.com).
 
 ## Meny, telefonnummer och sponsorer

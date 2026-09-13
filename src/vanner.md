@@ -6,7 +6,7 @@ description: Sponsorprogrammet Sicklaslussens vänner – stöd slussen och få 
 
 <h1>Sicklaslussens vänner</h1>
 
-<img class="lead-img" src="/static/images/vanner/Vanner_001.jpg" alt="Sicklaslussens vänner">
+<img class="lead-img" src="{{ '/static/images/vanner/Vanner_001.jpg' | url }}" alt="Sicklaslussens vänner">
 
 <p>Sicklaslussen hålls genom Föreningen Sicklaslussens försorg öppen med till största delen ideella krafter. För att bibehålla verksamheten behöver föreningen stöd från såväl föreningsmedlemmar som sponsorer.</p>
 
@@ -20,7 +20,7 @@ description: Sponsorprogrammet Sicklaslussens vänner – stöd slussen och få 
   <li>I mån av möjlighet, samannonsering vid tidningsannonser avseende slussevenemang</li>
 </ul>
 
-<p><strong>Kontakta <a href="/om-foreningen/">Föreningen Sicklaslussen</a> så får ni veta mer!</strong></p>
+<p><strong>Kontakta <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a> så får ni veta mer!</strong></p>
 
 <hr class="rule">
 

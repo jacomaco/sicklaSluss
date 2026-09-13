@@ -9,10 +9,10 @@
     {% for sponsor in site.sponsors %}
     <li>
       {% if sponsor.url %}<a href="{{ sponsor.url }}" target="_blank" rel="noopener">{% endif %}
-        <img src="{{ sponsor.image }}" alt="{{ sponsor.name }}">
+        <img src="{{ sponsor.image | url }}" alt="{{ sponsor.name }}">
       {% if sponsor.url %}</a>{% endif %}
     </li>
     {% endfor %}
   </ul>
-  <p><a class="text-link" href="/vanner/">Läs mer om att bli vän</a></p>
+  <p><a class="text-link" href="{{ '/vanner/' | url }}">Läs mer om att bli vän</a></p>
 </div>
