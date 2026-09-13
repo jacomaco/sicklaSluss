@@ -44,6 +44,6 @@ description: Öppettider, priser och regler för slussning i Sicklaslussen
   <li>› <a href="http://www.stockholm.se" target="_blank" rel="noopener">Stockholm Stad</a> – delägare i slussanläggningen genom samfällighetsförening med Nacka</li>
   <li>› <a href="http://www.nacka.se" target="_blank" rel="noopener">Nacka Kommun</a> – delägare i slussanläggningen genom samfällighetsförening med Stockholm</li>
   <li>› <a href="http://www.stockholmvatten.se/framtidensavloppsrening/omradesinformation/etableringsomraden/sickla/#!/nya-ostbergatunneln" target="_blank" rel="noopener">Stockholm Vatten</a> – Östbergatunneln för Stockholms dagvatten (som Nacka ej ansluter sig till)</li>
-  <li>› Tumregler slussfunktionär – vill du utbilda dig till slussvakt? Kontakta <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
-  <li>› Enkät vid slussning – ge återkoppling på hur slussningen fungerat till <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
+  <li>› <a href="{{ '/static/pdf/Tumregler_slussfunktionar.pdf' | url }}">Tumregler slussfunktionär (pdf)</a> – vill du utbilda dig till slussvakt? Kontakta <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
+  <li>› <a href="{{ '/static/pdf/Enkat_foreningen_sicklaslussen.pdf' | url }}">Enkät vid slussning (pdf)</a> – ge återkoppling på hur slussningen fungerat till <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
 </ul>
