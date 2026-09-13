@@ -24,9 +24,3 @@ The lock is open for boating **May 10 – September 27**. During this period the
 The lock is owned by the City of Stockholm and Nacka Municipality and operated on a voluntary basis by **Föreningen Sicklaslussen**.
 
 Contact: [webmaster@sicklasluss.se](mailto:webmaster@sicklasluss.se)
-
-
-
-"""  
-CMS-test  
-"""
