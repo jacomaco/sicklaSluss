@@ -25,11 +25,13 @@ npm run build    # bygger sidan till _site/
 
 ```
 sicklaSluss/
+├── .pages.yml                # Pages CMS (innehållshantering i webbläsaren)
 ├── eleventy.config.js       # Eleventy-konfiguration + bildgenerering
 ├── package.json             # npm-skript (dev/build)
 ├── templates/
 │   ├── nyhet-mall.md        # Mall att kopiera när du lägger till en nyhet
-│   └── bildreportage-mall.md# Mall för ett nytt bildalbum
+│   ├── bildreportage-mall.md# Mall för ett nytt bildalbum
+│   └── artikel-mall.md      # Mall för artiklar till artiklar-arkivet
 └── src/
     ├── _data/site.json      # Webbplatsuppgifter, meny, telefonnummer, sponsorer
     ├── _includes/           # Layout och partials (header/nav/sidebar/footer)
@@ -37,9 +39,11 @@ sicklaSluss/
     ├── images/bildreportage/# Originalfoton per album (byggs ned av eleventy-img)
     ├── static/images/       # Alla övriga bilder (logga, slussbilder, sponsorer)
     ├── static/pdf/          # PDF:er läggs här
+    ├── static/artiklar/     # Artiklars PDF/htm-filer
     ├── *.md                 # Sidorna (index, att-slussa, historik …)
     ├── nyheter/*.md         # Varje nyhet är en egen Markdown-fil
     ├── historik/*.md        # Undersidor (t.ex. Ångslupar)
+    ├── artiklar/*.md        # Metadata-filer för artiklarna (ej publika)
     └── bildreportage/*.md   # Varje album är en egen Markdown-fil
 ```
 
@@ -66,8 +70,9 @@ summary: Här är en kort sammanfattning som visas på startsidan.
 ## Så här lägger du till ett bildreportage
 
 1. Skapa en mapp `src/images/bildreportage/YYYY-MM-DD-kort-titel/` och lägg in fotona där (jpeg/png).
-2. Kopiera `templates/bildreportage-mall.md` till `src/bildreportage/YYYY-MM-DD-kort-titel.md` och fyll i `title`, `date`, `folder` samt listan över bildfiler.
-3. Spara – bygget genererar automatiskt tumnaglar och fullstora webboptimerade bilder (webp/jpeg), och albumet dyker upp på **Bildreportage**.
+2. Kopiera `templates/bildreportage-mall.md` till `src/bildreportage/YYYY-MM-DD-kort-titel.md` och fyll i `title`, `date` och `folder`.
+3. Se till att `folder`-värdet är exakt samma som mappnamnet i steg 1.
+4. Spara – bygget genererar automatiskt tumnaglar och fullstora webboptimerade bilder (webp/jpeg), och albumet dyker upp på **Bildreportage**.
 
 Bilder publiceras endast i webboptimerad form; originalfilerna finns kvar i repot och skickas **inte** till besökarna.
 
@@ -81,18 +86,40 @@ date: 2026-06-01
 tags:
   - album
 folder: 2026-06-01-slussdagen
-images:
-  - "01_foto.jpg"
-  - "02_foto.jpg"
 ---
 ```
+
+Bildlistan behövs inte längre – galleriet byggs automatiskt utifrån mappen `src/images/bildreportage/<folder>/`.
+
+## Så här lägger du till en artikel
+
+Artiklarna i arkivet är metadata-filer i `src/artiklar/` som renderas på sidan **Artiklar**. Varje fil pekar på en PDF/htm i `src/static/artiklar/`.
+
+1. Lägg filen (pdf/htm) i `src/static/artiklar/`.
+2. Kopiera `templates/artikel-mall.md` till `src/artiklar/` med ett kort, unikt filnamn.
+3. Fyll i `title`, `label` (datum som visas), `date` (sortering), `type` (A/I/N), `group` (ny/ark) och lämplig `file`/`pdf`/`link`/`attr`.
+
+Framtida datum i `date` sorterar högst upp; skriv `group: ark` för äldre material.
 
 ## Så lägger du till en PDF
 
 1. Lägg filen i `src/static/pdf/...`
 2. Länka till den med `[länktext](/static/pdf/filnamn.pdf)` – även undersidor (t.ex. `src/historik/*.md`) kan länka pdf:er på samma sätt.
 
-Artikelfilerna (PDF + äldre htm-sidor) ligger under `src/static/artiklar/` och artikel-listan i `src/artiklar.md` pekar på dem lokalt.
+Artikelfilerna (PDF + äldre htm-sidor) ligger under `src/static/artiklar/` och metadata-filerna i `src/artiklar/` pekar på dem.
+
+## Innehållshantering med Pages CMS
+
+Repot är anslutet till [Pages CMS](https://app.pagescms.org) via konfigurationen i `.pages.yml`. Redaktionen kan då redigera nyheter, bildreportage, artiklar, sidorna och webbplatsinställningarna direkt i webbläsaren utan att röra git.
+
+1. En administratör för repots GitHub-konto installerar Pages CMS GitHub App och bjuder in redaktionen (Settings → Collaborators).
+2. Öppna `https://app.pagescms.org/<ägare>/sicklaSluss` och logga in.
+3. Ändringar som görs skickas automatiskt som commits till repot → GitHub Actions bygger om och publicerar sajten.
+
+Notera:
+- `settings.content.merge: true` i `.pages.yml` gör att CMS:et bevarar front matter som `layout`/`tags` när en fil sparas.
+- För att ett nytt album ska visa bilder måste mappen `src/images/bildreportage/<folder>/` finnas med samma namn som `folder`-fältet. Ladda upp bilder via mediabiblioteket "Bildreportagebilder" i CMS:et.
+- Förstasidan (`src/index.md`) innehåller loopar och tas därför inte fram som ett vanligt CMS-fält – den redigeras i filen direkt.
 
 ## Så här publicerar du (deploy)
 

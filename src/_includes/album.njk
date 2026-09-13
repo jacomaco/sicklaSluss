@@ -6,6 +6,7 @@ layout: base.njk
 <h1>{{ title }}</h1>
 <p class="newsdate">{{ date | readableDate }}</p>
 
+{% set images = folder | albumImages %}
 <div class="gallery" data-gallery>
   {% for img in images %}
     {% albumImg folder, img, title ~ " – bild " ~ loop.index %}

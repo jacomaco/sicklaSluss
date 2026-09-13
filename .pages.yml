@@ -1,0 +1,368 @@
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} -> {newPath}"
+
+media:
+  - name: bilder
+    label: Bilder
+    input: src/static/images
+    output: /static/images
+    categories: [image]
+    commit:
+      templates:
+        create: "media(create): {filename}"
+        update: "media(update): {filename}"
+        delete: "media(delete): {filename}"
+        rename: "media(rename): {oldFilename} -> {newFilename}"
+  - name: albumbilder
+    label: Bildreportagebilder
+    input: src/images/bildreportage
+    output: /static/images/bildreportage
+    categories: [image]
+    commit:
+      templates:
+        create: "media(create): {filename}"
+        update: "media(update): {filename}"
+        delete: "media(delete): {filename}"
+        rename: "media(rename): {oldFilename} -> {newFilename}"
+  - name: dokument
+    label: Dokument (artiklar)
+    input: src/static/artiklar
+    output: /static/artiklar
+    categories: [document]
+    commit:
+      templates:
+        create: "media(create): {filename}"
+        update: "media(update): {filename}"
+        delete: "media(delete): {filename}"
+        rename: "media(rename): {oldFilename} -> {newFilename}"
+
+content:
+  - name: nyheter
+    label: Nyheter
+    type: collection
+    path: src/nyheter
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: false
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+        required: true
+      - name: date
+        label: Datum
+        type: date
+        required: true
+      - name: summary
+        label: Sammanfattning (visas på förstasidan)
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          path: nyheter
+          switcher: true
+
+  - name: album
+    label: Bildreportage
+    type: collection
+    path: src/bildreportage
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: false
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+        required: true
+      - name: date
+        label: Datum
+        type: date
+        required: true
+      - name: folder
+        label: Mappnamn för bilderna
+        type: string
+        required: true
+        description: "Bilderna ligger under mediabiblioteket Bildreportagebilder i en mapp med samma namn som här, t.ex. 2026-08-30_slussdag. Ladda upp/lägg bilderna där; fotogalleriet byggs automatiskt."
+
+  - name: artiklar
+    label: Artiklar
+    type: collection
+    path: src/artiklar
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: false
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+        required: true
+      - name: label
+        label: Datumetikett (visas före rubriken)
+        type: string
+        required: true
+      - name: date
+        label: Datum (för sortering)
+        type: date
+        required: true
+      - name: type
+        label: Typ
+        type: select
+        options:
+          values:
+            - name: A
+              label: A – historiskt/vetenskapligt intresse
+            - name: I
+              label: I – information och skrivelser
+            - name: N
+              label: N – nyhetsartikel
+      - name: group
+        label: Sektion
+        type: select
+        options:
+          values:
+            - name: ny
+              label: Nyare artiklar
+            - name: ark
+              label: Historiska artiklar (arkiv)
+      - name: file
+        label: Länk till artikel (fil i Dokument)
+        type: file
+        options:
+          media: dokument
+      - name: pdf
+        label: Pdf-kopia – visas som [som pdf]
+        type: file
+        options:
+          media: dokument
+      - name: link
+        label: Extern länk (om ingen fil)
+        type: string
+      - name: attr
+        label: Extratext efter ” –” (t.ex. källa)
+        type: text
+
+  - name: att-slussa
+    label: Sida – Att slussa
+    type: file
+    path: src/att-slussa.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: historik
+    label: Sida – Historik
+    type: file
+    path: src/historik.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: slupar
+    label: Undersida – Ångslupar
+    type: file
+    path: src/historik/slupar.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: in-english
+    label: Sida – In English
+    type: file
+    path: src/in-english.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: om-foreningen
+    label: Sida – Om föreningen
+    type: file
+    path: src/om-foreningen.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: omgivning
+    label: Sida – Omgivning & Strandhugg
+    type: file
+    path: src/omgivning.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: vanner
+    label: Sida – Sicklaslussens vänner
+    type: file
+    path: src/vanner.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Rubrik
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+          media: bilder
+          switcher: true
+
+  - name: webbplats
+    label: Webbplatsinställningar
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: title
+        label: Webbplatsens namn
+        type: string
+      - name: description
+        label: Beskrivning
+        type: text
+      - name: url
+        label: Webbadress
+        type: string
+      - name: telephone
+        label: Telefon (visning)
+        type: string
+      - name: telephoneLink
+        label: Telefon (länk)
+        type: string
+      - name: email
+        label: E-post
+        type: string
+      - name: nav
+        label: Meny
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Namn
+            type: string
+          - name: url
+            label: Länk
+            type: string
+      - name: sponsors
+        label: Sponsorer
+        type: object
+        list:
+          min: 0
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Namn
+            type: string
+          - name: url
+            label: Länk
+            type: string
+          - name: image
+            label: Bild
+            type: image
+            options:
+              media: bilder

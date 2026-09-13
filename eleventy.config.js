@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const Image = require("@11ty/eleventy-img");
 
 // Vid lansering med egen domän sätts denna till "" (eller ändra till "/")
@@ -59,6 +61,17 @@ module.exports = function (eleventyConfig) {
 
   // Galleribilder (tumnagel + storbild) för bildreportage
   eleventyConfig.addAsyncShortcode("albumImg", albumImg);
+
+  // Lista bilder i ett album automatiskt från bildmappen, så redaktören
+  // inte behöver fylla i filnamnen för hand.
+  eleventyConfig.addFilter("albumImages", (folder) => {
+    const dir = path.join(ALBUM_IMG, folder || "");
+    if (!fs.existsSync(dir)) return [];
+    return fs
+      .readdirSync(dir)
+      .filter((f) => /\.(jpe?g|png|gif|webp)$/i.test(f))
+      .sort((a, b) => a.localeCompare(b, "sv", { numeric: true }));
+  });
 
   // Datumformatering för nyheter m.m.
   eleventyConfig.addFilter("shortDate", (d) => {
