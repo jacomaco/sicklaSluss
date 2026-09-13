@@ -44,8 +44,8 @@ description: Sicklaslussens historia – från vikingatidens Järlaled till idag
 
 <h2>Länkar och dokument</h2>
 <ul>
-  <li>› Ångslupar – passagerartrafik på Hammarby Sjö och Sicklasjön</li>
+  <li>› <a href="{{ '/historik/slupar/' | url }}">Ångslupar – passagerartrafik på Hammarby Sjö och Sicklasjön</a></li>
   <li>› <a href="{{ '/artiklar/' | url }}">Historiska artiklar</a> – finns under Artikelfliken på denna site</li>
   <li>› <a href="http://infobank.nacka.se/ext/Kultur/Nackas_historia/nacka_genom_tiderna/Platser/html/body_sicklaon.html" target="_blank" rel="noopener">Sicklaöns historik</a> – med utvikningar om Sickla, Alphyddan, Finntorp, Storängen, Järla m.m. väl beskriven på Nacka Kommuns infobank</li>
-  <li>› Figurer och ritningar (pdf)</li>
+  <li>› <a href="{{ '/static/pdf/Ritningar_slussanlaggning.pdf' | url }}">Figurer och ritningar (pdf)</a></li>
 </ul>

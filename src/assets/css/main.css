@@ -273,6 +273,25 @@ body {
   border: 1px solid var(--border);
 }
 
+.hist-figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.hist-figure img {
+  border: 1px solid var(--border);
+}
+
+.hist-figure figcaption {
+  margin-top: 6px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.back-link {
+  font-size: 0.9em;
+}
+
 .rule {
   border: 0;
   border-top: 1px solid var(--border);
