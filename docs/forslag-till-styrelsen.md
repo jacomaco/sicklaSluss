@@ -77,6 +77,14 @@ också se över hur e-posten hamnar, se nästa avsnitt.
 3. Ger inga mer att ta beslut om: **vem ska äga GitHub-repot på sikt** (förslag:
    föreningen själv) och **vilka artiklar från gamla arkivet som ska behållas**.
 
+## Framtida utveckling
+
+Sajten är statisk och har i dag inga formulär (t.ex. "Enkät vid slussning" är en
+PDF). Vill föreningen senare samla in svar i enkäter, intresseanmälningar eller
+liknande kan ett webbformulär implementeras utan att byta plattform – t.ex. med
+en formulärtjänst (Google Forms/Formspree) eller ett publikt formulär via
+GitHub Issues. Detta kan vara värt att utreda i ett senare skede.
+
 ## Sammanfattning för beslut
 
 Föreslå att styrelsen godkänner: *"Webbplatsen flyttas till GitHub Pages
