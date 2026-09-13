@@ -71,6 +71,31 @@ body {
 
 .sidebar-right {
   order: 0;
+  text-align: center;
+}
+
+.sidebar-right .card {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-right .sponsor-list {
+  padding: 0;
+  text-align: center;
+}
+
+.sidebar-right .sponsor-list li {
+  list-style: none;
+}
+
+.sidebar-right .sponsor-list img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-right .text-link {
+  display: inline-block;
 }
 
 .nav-intro {
@@ -366,38 +391,6 @@ ul.articles li {
     order: 2;
     position: sticky;
     top: 16px;
-  }
-}
-
-/* Surfplatta (mellan mobil och desktop): högersidokalumnen centreras
-   relativt innehållet och dess innehåll centreras. */
-@media (min-width: 780px) and (max-width: 1019px) {
-  .sidebar-right {
-    text-align: center;
-  }
-
-  .sidebar-right .card {
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sidebar-right .sponsor-list {
-    padding: 0;
-    text-align: center;
-  }
-
-  .sidebar-right .sponsor-list li {
-    list-style: none;
-  }
-
-  .sidebar-right .sponsor-list img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sidebar-right .text-link {
-    display: inline-block;
   }
 }
 /* ---------- Bildreportage: galleri + ljuslåda ---------- */
