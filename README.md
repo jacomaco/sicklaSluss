@@ -81,7 +81,7 @@ tags: album
 1. Lägg filen i `src/static/pdf/...`
 2. Länka till den med `[länktext](/static/pdf/filnamn.pdf)`.
 
-OBS: Äldre artiklar på `artiklar.md` länkar tills vidare till den befintliga sajten – byt ut när filerna flyttats in lokalt.
+Artikelfilerna (PDF + äldre htm-sidor) ligger under `src/static/artiklar/` och artikel-listan i `src/artiklar.md` pekar på dem lokalt.
 
 ## Så här publicerar du (deploy)
 
