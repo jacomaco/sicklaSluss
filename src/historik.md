@@ -6,7 +6,7 @@ description: Sicklaslussens historia – från vikingatidens Järlaled till idag
 
 <h1>Sicklaslussen – Historik</h1>
 
-<img class="lead-img" src="{{ '/static/images/historik/Historik_001.jpg' | url }}" alt="Sicklaslussen genom tiden">
+<img class="lead-img" src="{{ '/static/images/historik/Historik_001.jpg' | url }}" alt="Sicklaslussen genom tiden" width="200" height="150" decoding="async" fetchpriority="high">
 
 <p>Vattenleden över "Duvnäsviken–Kolbotten–Järlasjön–Sickla Sjö (tidigare Långsjön)–Hammarby Sjö–Mälaren" har nyttjats av båtfarare och slädförare i mer än ett årtusende.</p>
 
@@ -46,6 +46,6 @@ description: Sicklaslussens historia – från vikingatidens Järlaled till idag
 <ul>
   <li>› <a href="{{ '/historik/slupar/' | url }}">Ångslupar – passagerartrafik på Hammarby Sjö och Sicklasjön</a></li>
   <li>› <a href="{{ '/artiklar/' | url }}">Historiska artiklar</a> – finns under Artikelfliken på denna site</li>
-  <li>› <a href="http://infobank.nacka.se/ext/Kultur/Nackas_historia/nacka_genom_tiderna/Platser/html/body_sicklaon.html" target="_blank" rel="noopener">Sicklaöns historik</a> – med utvikningar om Sickla, Alphyddan, Finntorp, Storängen, Järla m.m. väl beskriven på Nacka Kommuns infobank</li>
+  <li>› <a href="http://infobank.nacka.se/ext/Kultur/Nackas_historia/nacka_genom_tiderna/Platser/html/body_sicklaon.html" target="_blank" rel="noopener noreferrer">Sicklaöns historik</a> – med utvikningar om Sickla, Alphyddan, Finntorp, Storängen, Järla m.m. väl beskriven på Nacka Kommuns infobank</li>
   <li>› <a href="{{ '/static/pdf/Ritningar_slussanlaggning.pdf' | url }}">Figurer och ritningar (pdf)</a></li>
 </ul>

@@ -6,7 +6,7 @@ description: Sponsorprogrammet Sicklaslussens vänner – stöd slussen och få 
 
 <h1>Sicklaslussens vänner</h1>
 
-<img class="lead-img" src="{{ '/static/images/vanner/Vanner_001.jpg' | url }}" alt="Sicklaslussens vänner">
+<img class="lead-img" src="{{ '/static/images/vanner/Vanner_001.jpg' | url }}" alt="Sicklaslussens vänner" width="250" height="188" decoding="async" fetchpriority="high">
 
 <p>Sicklaslussen hålls genom Föreningen Sicklaslussens försorg öppen med till största delen ideella krafter. För att bibehålla verksamheten behöver föreningen stöd från såväl föreningsmedlemmar som sponsorer.</p>
 
@@ -27,11 +27,11 @@ description: Sponsorprogrammet Sicklaslussens vänner – stöd slussen och få 
 <h2>Länkar till andra ideella intresseorganisationer</h2>
 <ul>
   <li>› <a href="http://kanaler.arnholm.nu">Nordens alla kanaler</a> – unik sammanställning av Sveriges kanaler och slussar</li>
-  <li>› <a href="http://www.onnesluss.se" target="_blank" rel="noopener">Önne sluss</a> – byggprojekt som visar att det fortfarande kan byggas nya slussar i Sverige</li>
-  <li>› <a href="http://www.veteranbaten.se/" target="_blank" rel="noopener">Veteranbåten</a> – museiföreningen Sveriges Fritidsbåtar</li>
-  <li>› <a href="http://www.steamboatassociation.se/" target="_blank" rel="noopener">Sveriges Ångbåtsförening</a> – SÅF, ses ofta vid Sicklaslussens dag</li>
-  <li>› <a href="http://www.klubbmaritim.com/Sidor/lankar.html" target="_blank" rel="noopener">Klubb Maritim</a> – förening för sjöfarts- och fartygshistoria, många bra maritima länkar</li>
-  <li>› <a href="http://www.smbf.org/" target="_blank" rel="noopener">Saltsjön–Mälarens Båtförbund SMBF</a> – båtlivsfrämjandet</li>
-  <li>› <a href="http://www.allmogebatar.nu/" target="_blank" rel="noopener">Föreningen Allmogebåtar</a> – intresseförening för allmogebåtar, bl.a. museum på Fjäderholmarna</li>
-  <li>› <a href="http://www.sjostadenskanotklubb.info.se/" target="_blank" rel="noopener">Sjöstadens kanotklubb</a> – Hammarby sjöstads kanotklubb, nedanför Hammarbybacken</li>
+  <li>› Önne sluss – byggprojekt som visar att det fortfarande kan byggas nya slussar i Sverige</li>
+  <li>› <a href="http://www.veteranbaten.se/" target="_blank" rel="noopener noreferrer">Veteranbåten</a> – museiföreningen Sveriges Fritidsbåtar</li>
+  <li>› <a href="http://www.steamboatassociation.se/" target="_blank" rel="noopener noreferrer">Sveriges Ångbåtsförening</a> – SÅF, ses ofta vid Sicklaslussens dag</li>
+  <li>› Klubb Maritim – förening för sjöfarts- och fartygshistoria</li>
+  <li>› <a href="http://www.smbf.org/" target="_blank" rel="noopener noreferrer">Saltsjön–Mälarens Båtförbund SMBF</a> – båtlivsfrämjandet</li>
+  <li>› <a href="http://www.allmogebatar.nu/" target="_blank" rel="noopener noreferrer">Föreningen Allmogebåtar</a> – intresseförening för allmogebåtar, bl.a. museum på Fjäderholmarna</li>
+  <li>› Sjöstadens kanotklubb – Hammarby sjöstads kanotklubb, nedanför Hammarbybacken</li>
 </ul>

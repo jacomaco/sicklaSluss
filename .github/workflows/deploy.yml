@@ -25,9 +25,23 @@ jobs:
           node-version: 22
           cache: npm
 
+      # Återanvänd färdigbearbetade album Bilder mellan bygg. Filnamnen
+      # innehåller en hash av källbilden, så cachade filer kan aldrig bli
+      # inaktuella.
+      - name: Cache generated album images
+        uses: actions/cache@v4
+        with:
+          path: _site/static/images/bildreportage
+          key: album-images-${{ runner.os }}-${{ hashFiles('src/images/bildreportage/**', 'eleventy.config.mjs') }}
+          restore-keys: |
+            album-images-${{ runner.os }}-
+
       - run: npm ci
 
       - run: npm run build
+
+      - name: Check internal links
+        run: npm run check:links
 
       - uses: actions/configure-pages@v5
         with:

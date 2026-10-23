@@ -104,6 +104,19 @@ content:
         type: string
         required: true
         description: "Bilderna ligger under mediabiblioteket Bildreportagebilder i en mapp med samma namn som här, t.ex. 2026-08-30_slussdag. Ladda upp/lägg bilderna där; fotogalleriet byggs automatiskt."
+      - name: cover
+        label: Omslagsbild (filnamn, valfritt)
+        type: string
+        description: "Filnamn på bilden som ska visas som omslag, t.ex. IMG_2675.JPG. Lämna tomt för att använda första bilden i mappen."
+      - name: period
+        label: Period
+        type: select
+        options:
+          values:
+            - name: nutida
+              label: Nutida
+            - name: historiskt
+              label: Historiskt (visas sist, datum döljs)
 
   - name: artiklar
     label: Artiklar
@@ -334,6 +347,9 @@ content:
       - name: url
         label: Webbadress
         type: string
+      - name: noindex
+        label: Dölj webbplatsen för sökmotorer (testversion)
+        type: boolean
       - name: telephone
         label: Telefon (visning)
         type: string
@@ -378,3 +394,73 @@ content:
             type: image
             options:
               media: bilder
+          - name: width
+            label: Bildens bredd i pixlar
+            type: number
+            description: "Behövs för att sidan inte ska hoppa till när bilden laddas. Exempel: 140."
+          - name: height
+            label: Bildens höjd i pixlar
+            type: number
+            description: "Exempel: 99."
+
+  - name: kalendarium
+    label: Kalendarium (öppettider och slussdagar)
+    type: file
+    path: src/_data/kalendarium.json
+    format: json
+    fields:
+      - name: year
+        label: År
+        type: number
+      - name: seasonStart
+        label: Säsongen börjar (svensk text, t.ex. "10 maj")
+        type: string
+      - name: seasonEnd
+        label: Säsongen slutar (svensk text, t.ex. "27 sep")
+        type: string
+      - name: openingHours
+        label: Drop-in-tider (svensk text)
+        type: string
+      - name: events
+        label: Slussdagar (svenska)
+        type: object
+        list:
+          min: 0
+          collapsible:
+            collapsed: true
+            summary: "{date}"
+        fields:
+          - name: date
+            label: Datum (text, t.ex. 23 maj)
+            type: string
+          - name: text
+            label: Beskrivning
+            type: string
+      - name: english
+        label: English
+        type: object
+        fields:
+          - name: seasonStart
+            label: Season starts
+            type: string
+          - name: seasonEnd
+            label: Season ends
+            type: string
+          - name: openingHours
+            label: Drop-in hours
+            type: string
+          - name: events
+            label: Exhibition days
+            type: object
+            list:
+              min: 0
+              collapsible:
+                collapsed: true
+                summary: "{date}"
+            fields:
+              - name: date
+                label: Date
+                type: string
+              - name: text
+                label: Description
+                type: string

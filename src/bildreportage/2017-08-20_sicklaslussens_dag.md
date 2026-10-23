@@ -5,4 +5,5 @@ date: 2017-08-20
 tags:
   - album
 folder: "2017-08-20_sicklaslussens_dag"
+cover: "IMG_2675.JPG"
 ---

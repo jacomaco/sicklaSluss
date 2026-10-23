@@ -6,12 +6,15 @@ description: Aktuella nyheter från Föreningen Sicklaslussen
 
 <h1>Nyheter</h1>
 
-<img class="lead-img" src="{{ '/static/images/nyheter/Nyheter_001.jpg' | url }}" alt="Sicklaslussen">
+<img class="lead-img" src="{{ '/static/images/nyheter/Nyheter_001.jpg' | url }}" alt="Sicklaslussen" width="200" height="150" decoding="async" fetchpriority="high">
 
 <div class="card">
-  <h2 class="card-title">Kalendarium 2026</h2>
-  <p>Sicklaslussen är öppet för slussning 10 maj – 27 sep. Under denna period gratis drop-in-slussning lördagar kl 10:30–11:30 och kl 16:00–17:00. Övrig tid slussning efter beställning på föreningens slusstelefon <a href="tel:+46707816547">070-7816547</a>.</p>
-  <p>Sicklaslussens slussdagar: <strong>23 maj &amp; 30 aug</strong>, då med gratis slussning kl 10–16.</p>
+  <h2 class="card-title">Kalendarium {{ kalendarium.year }}</h2>
+  <p>Sicklaslussen är öppet för slussning {{ kalendarium.seasonStart }} – {{ kalendarium.seasonEnd }}. Under denna period gratis drop-in-slussning {{ kalendarium.openingHours }}. Övrig tid slussning efter beställning på föreningens slusstelefon <a href="tel:+46707816547">070-7816547</a>.</p>
+  <p>Sicklaslussens slussdagar:</p>
+  <ul class="calendar-list">
+  {% for event in kalendarium.events %}<li><strong>{{ event.date }}</strong> – {{ event.text }}</li>{% endfor %}
+  </ul>
 </div>
 
 <ul class="news-list">

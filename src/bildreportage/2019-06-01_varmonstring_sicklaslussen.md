@@ -5,4 +5,5 @@ date: 2019-06-10
 tags:
   - album
 folder: "2019-06-01_varmonstring_sicklaslussen"
+cover: "IMG_3895_red.JPG"
 ---

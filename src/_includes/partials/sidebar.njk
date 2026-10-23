@@ -8,8 +8,8 @@
   <ul class="sponsor-list">
     {% for sponsor in site.sponsors %}
     <li>
-      {% if sponsor.url %}<a href="{{ sponsor.url }}" target="_blank" rel="noopener">{% endif %}
-        <img src="{{ sponsor.image | url }}" alt="{{ sponsor.name }}">
+      {% if sponsor.url %}<a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+        <img src="{{ sponsor.image | url }}" alt="{{ sponsor.name }}"{% if sponsor.width %} width="{{ sponsor.width }}" height="{{ sponsor.height }}" loading="lazy" decoding="async"{% endif %}>
       {% if sponsor.url %}</a>{% endif %}
     </li>
     {% endfor %}

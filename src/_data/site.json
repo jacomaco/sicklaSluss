@@ -2,6 +2,8 @@
   "title": "Sicklaslussen",
   "description": "Föreningen Sicklaslussens webbplats – vattenförbindelsen till Sickla och Järlasjön",
   "url": "https://sicklasluss.se",
+  "noindex": true,
+  "ogImage": "/static/og-image.jpg",
   "telephone": "070-7816547",
   "telephoneLink": "+46707816547",
   "email": "webmaster@sicklasluss.se",
@@ -15,23 +17,30 @@
     { "title": "Omgivning & Strandhugg", "url": "/omgivning/" },
     { "title": "Om föreningen", "url": "/om-foreningen/" },
     { "title": "Sicklaslussens vänner", "url": "/vanner/" },
-    { "title": "In English", "url": "/in-english/" }
+    { "title": "In English", "url": "/in-english/" },
+    { "title": "Sök", "url": "/sok/" }
   ],
   "sponsors": [
     {
       "name": "s/s Blidösund",
       "url": "https://ss-blidosund.se/",
-      "image": "/static/images/v1.gif"
+      "image": "/static/images/v1.gif",
+      "width": 140,
+      "height": 99
     },
     {
       "name": "Sjöstadens Kajak",
       "url": "https://sjostadenkajak.se",
-      "image": "/static/images/v4.gif"
+      "image": "/static/images/v4.gif",
+      "width": 140,
+      "height": 99
     },
     {
       "name": "Facebook – Föreningen Sicklaslussen",
       "url": "http://www.facebook.com/ForeningenSicklaslussen",
-      "image": "/static/images/v6.gif"
+      "image": "/static/images/v6.gif",
+      "width": 140,
+      "height": 102
     }
   ]
 }

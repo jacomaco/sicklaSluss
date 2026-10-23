@@ -25,7 +25,7 @@ description: Artikelarkiv om Sicklaslussen – historiska och vetenskapliga arti
   <li>
     <strong>{{ post.data.label }}</strong> [{{ post.data.type }}]
     {% if post.data.file %}<a href="{{ post.data.file | url | replace(' ', '%20') }}">{{ post.data.title }}</a>
-    {% elseif post.data.link %}<a href="{{ post.data.link }}" target="_blank" rel="noopener">{{ post.data.title }}</a>
+    {% elseif post.data.link %}<a href="{{ post.data.link }}" target="_blank" rel="noopener noreferrer">{{ post.data.title }}</a>
     {% else %}{{ post.data.title }}{% endif %}
     {% if post.data.pdf %} <a href="{{ post.data.pdf | url | replace(' ', '%20') }}">[som pdf]</a>{% endif %}
     {% if post.data.attr %} – {{ post.data.attr }}{% endif %}
@@ -44,7 +44,7 @@ description: Artikelarkiv om Sicklaslussen – historiska och vetenskapliga arti
   <li>
     <strong>{{ post.data.label }}</strong> [{{ post.data.type }}]
     {% if post.data.file %}<a href="{{ post.data.file | url | replace(' ', '%20') }}">{{ post.data.title }}</a>
-    {% elseif post.data.link %}<a href="{{ post.data.link }}" target="_blank" rel="noopener">{{ post.data.title }}</a>
+    {% elseif post.data.link %}<a href="{{ post.data.link }}" target="_blank" rel="noopener noreferrer">{{ post.data.title }}</a>
     {% else %}{{ post.data.title }}{% endif %}
     {% if post.data.pdf %} <a href="{{ post.data.pdf | url | replace(' ', '%20') }}">[som pdf]</a>{% endif %}
     {% if post.data.attr %} – {{ post.data.attr }}{% endif %}

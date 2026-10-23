@@ -4,14 +4,20 @@
   "private": true,
   "description": "Hemsida för Föreningen Sicklaslussen – statisk Eleventy-site",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "eleventy --serve",
-    "build": "eleventy",
-    "reload": "eleventy --serve --watch"
+    "dev": "eleventy && pagefind --site _site --quiet && eleventy --serve",
+    "build": "eleventy && pagefind --site _site --quiet",
+    "reload": "eleventy --serve --watch",
+    "clean": "rm -rf _site",
+    "check:links": "node scripts/check-links.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-img": "^7.1.1",
+    "pagefind": "^1.5.2",
     "sharp": "^0.35.4"
   }
 }

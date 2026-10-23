@@ -6,7 +6,7 @@ description: Öppettider, priser och regler för slussning i Sicklaslussen
 
 <h1>Att slussa i Sicklaslussen</h1>
 
-<img class="lead-img" src="{{ '/static/images/att-slussa/Att_slussa_001.jpg' | url }}" alt="Att slussa i Sicklaslussen">
+<img class="lead-img" src="{{ '/static/images/att-slussa/Att_slussa_001.jpg' | url }}" alt="Att slussa i Sicklaslussen" width="250" height="194" decoding="async" fetchpriority="high">
 
 <h2>Öppet för båttrafik 7 maj – 24 september</h2>
 
@@ -35,15 +35,15 @@ description: Öppettider, priser och regler för slussning i Sicklaslussen
 
 <h2>Länkar och dokument</h2>
 <ul>
-  <li>› <a href="http://kartor.eniro.se/m/92LlB" target="_blank" rel="noopener">Karta från eniro.se</a> samt <a href="http://kartor.eniro.se/m/92LoY" target="_blank" rel="noopener">flygfoto från eniro.se</a></li>
-  <li>› <a href="http://kartor.eniro.se/m/92LoY" target="_blank" rel="noopener">Hitta till Sickla sluss</a> – karta (pdf)</li>
-  <li>› <a href="http://www.stockholmshamnar.se" target="_blank" rel="noopener">Stockholms Hamn</a> – redovisar bl.a. vattenstånd som påverkar djupgående från Saltsjön</li>
-  <li>› <a href="http://www.jarlasjo.se" target="_blank" rel="noopener">Järla Sjö</a> – visar vad man kan göra vid strandhugg i området Järla Sjö</li>
-  <li>› <a href="http://www.hammarbysjostad.se" target="_blank" rel="noopener">Hammarby Sjöstad</a> – visar vad man kan göra vid strandhugg i Hammarby Sjöstad</li>
-  <li>› <a href="https://www.lansstyrelsen.se/stockholm/besok-och-upptack/naturreservat/nackareservatet.html" target="_blank" rel="noopener">Nackareservatet</a> – visar vad man kan finna vid strandhugg i Nackareservatet</li>
-  <li>› <a href="http://www.stockholm.se" target="_blank" rel="noopener">Stockholm Stad</a> – delägare i slussanläggningen genom samfällighetsförening med Nacka</li>
-  <li>› <a href="http://www.nacka.se" target="_blank" rel="noopener">Nacka Kommun</a> – delägare i slussanläggningen genom samfällighetsförening med Stockholm</li>
-  <li>› <a href="http://www.stockholmvatten.se/framtidensavloppsrening/omradesinformation/etableringsomraden/sickla/#!/nya-ostbergatunneln" target="_blank" rel="noopener">Stockholm Vatten</a> – Östbergatunneln för Stockholms dagvatten (som Nacka ej ansluter sig till)</li>
+  <li>› <a href="http://kartor.eniro.se/m/92LlB" target="_blank" rel="noopener noreferrer">Karta från eniro.se</a> samt <a href="http://kartor.eniro.se/m/92LoY" target="_blank" rel="noopener noreferrer">flygfoto från eniro.se</a></li>
+  <li>› <a href="http://kartor.eniro.se/m/92LoY" target="_blank" rel="noopener noreferrer">Hitta till Sickla sluss</a> – karta (pdf)</li>
+  <li>› <a href="http://www.stockholmshamnar.se" target="_blank" rel="noopener noreferrer">Stockholms Hamn</a> – redovisar bl.a. vattenstånd som påverkar djupgående från Saltsjön</li>
+  <li>› <a href="http://www.jarlasjo.se" target="_blank" rel="noopener noreferrer">Järla Sjö</a> – visar vad man kan göra vid strandhugg i området Järla Sjö</li>
+  <li>› <a href="http://www.hammarbysjostad.se" target="_blank" rel="noopener noreferrer">Hammarby Sjöstad</a> – visar vad man kan göra vid strandhugg i Hammarby Sjöstad</li>
+  <li>› <a href="https://www.lansstyrelsen.se/stockholm/besok-och-upptack/naturreservat/nackareservatet.html" target="_blank" rel="noopener noreferrer">Nackareservatet</a> – visar vad man kan finna vid strandhugg i Nackareservatet</li>
+  <li>› <a href="http://www.stockholm.se" target="_blank" rel="noopener noreferrer">Stockholm Stad</a> – delägare i slussanläggningen genom samfällighetsförening med Nacka</li>
+  <li>› <a href="http://www.nacka.se" target="_blank" rel="noopener noreferrer">Nacka Kommun</a> – delägare i slussanläggningen genom samfällighetsförening med Stockholm</li>
+  <li>› <a href="https://www.stockholmvattenochavfall.se/" target="_blank" rel="noopener noreferrer">Stockholm Vatten</a> – Östbergatunneln för Stockholms dagvatten (som Nacka ej ansluter sig till)</li>
   <li>› <a href="{{ '/static/pdf/Tumregler_slussfunktionar.pdf' | url }}">Tumregler slussfunktionär (pdf)</a> – vill du utbilda dig till slussvakt? Kontakta <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
   <li>› <a href="{{ '/static/pdf/Enkat_foreningen_sicklaslussen.pdf' | url }}">Enkät vid slussning (pdf)</a> – ge återkoppling på hur slussningen fungerat till <a href="{{ '/om-foreningen/' | url }}">Föreningen Sicklaslussen</a></li>
 </ul>

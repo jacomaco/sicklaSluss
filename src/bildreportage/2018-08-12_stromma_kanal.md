@@ -5,4 +5,5 @@ date: 2018-08-12
 tags:
   - album
 folder: "2018-08-12_stromma_kanal"
+cover: "IMG_3580.JPG"
 ---

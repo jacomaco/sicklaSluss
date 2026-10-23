@@ -1,13 +1,59 @@
 <!doctype html>
-<html lang="sv">
+<html lang="{{ lang or 'sv' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} – {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ description or site.description }}">
+  {% set pageTitle = (title ~ " – " ~ site.title) if title else site.title %}
+  {% set pageDescription = description if description else ((title ~ " – " ~ site.title) if title else site.description) %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  {% if site.noindex or noindex %}
+  <meta name="robots" content="noindex, nofollow">
+  {% else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% endif %}
+  <meta name="theme-color" content="#000040">
+
+  <link rel="icon" href="{{ '/static/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/static/favicon-192.png' | url }}" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="{{ '/static/apple-touch-icon.png' | url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} – Nyheter" href="{{ '/nyheter/feed.xml' | url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:locale" content="{{ 'en_GB' if lang == 'en' else 'sv_SE' }}">
+  {% if not site.noindex and not noindex %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% endif %}
+  {% if site.ogImage %}
+  <meta property="og:image" content="{{ site.url }}{{ site.ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+  {% if pagefind %}
+  <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
+  {% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.telephoneLink }}",
+    "logo": "{{ site.url }}/static/favicon-512.png"
+  }
+  </script>
 </head>
-<body>
+<body{% if pagefindIgnore %} data-pagefind-ignore{% endif %}>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
   <header class="site-header">
     {% include "partials/header.njk" %}
   </header>
@@ -17,10 +63,10 @@
       {% include "partials/nav.njk" %}
     </nav>
 
-    <main class="content">
+    <main class="content" id="main" tabindex="-1">
       {% if leadImage %}
       <h1>{{ h1 | default(title) }}</h1>
-      <img class="lead-img" src="{{ leadImage | url }}" alt="{{ leadImageAlt | default(h1 | default(title)) }}">
+      <img class="lead-img" src="{{ leadImage | url }}" alt="{{ leadImageAlt | default(h1 | default(title)) }}"{% if leadImageWidth %} width="{{ leadImageWidth }}" height="{{ leadImageHeight }}"{% endif %} fetchpriority="high" decoding="async">
       {% endif %}
       {{ content | safe }}
     </main>

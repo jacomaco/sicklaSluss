@@ -1,0 +1,31 @@
+{
+  "year": 2026,
+  "seasonStart": "10 maj",
+  "seasonEnd": "27 sep",
+  "openingHours": "lördagar kl 10:30–11:30 och kl 16:00–17:00",
+  "events": [
+    {
+      "date": "23 maj",
+      "text": "gratis slussning kl 10–16"
+    },
+    {
+      "date": "30 aug",
+      "text": "gratis slussning kl 10–16"
+    }
+  ],
+  "english": {
+    "seasonStart": "May 10",
+    "seasonEnd": "September 27",
+    "openingHours": "Saturdays 10:30–11:30 and 16:00–17:00",
+    "events": [
+      {
+        "date": "May 23",
+        "text": "free passage 10:00–16:00"
+      },
+      {
+        "date": "August 30",
+        "text": "free passage 10:00–16:00, with guided electric-boat tours between Hammarby Sjöstad and Järlasjön"
+      }
+    ]
+  }
+}

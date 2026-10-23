@@ -16,7 +16,8 @@ Denna guide beskriver steg för steg hur du:
 
 Innan DNS:en pekas om ska två saker vara klara i koden:
 
-- `pathPrefix` i `eleventy.config.js` ska vara borttagen (sid-loggarna ska peka på domänens rot).
+- `PATH_PREFIX` i `eleventy.config.mjs` ska vara `""` (sidan ska ligga på domänens rot).
+- `"noindex"` i `src/_data/site.json` ska vara `false` (annars hindras sökmotorer från att indexera sidan).
 - Custom domain ska vara ifylld i GitHub Pages-inställningarna (se Del 2).
 
 > **Viktigt:** Eftersom sidan publiceras via **GitHub Actions** räknas inte en

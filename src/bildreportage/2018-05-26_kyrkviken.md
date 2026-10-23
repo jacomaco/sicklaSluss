@@ -5,4 +5,5 @@ date: 2018-05-26
 tags:
   - album
 folder: "2018-05-26_kyrkviken"
+cover: "IMG_3250.JPG"
 ---

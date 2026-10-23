@@ -5,4 +5,5 @@ date: 2020-07-14
 tags:
   - album
 folder: "2020-07-14_surahammar"
+cover: "IMG_4022.JPG"
 ---

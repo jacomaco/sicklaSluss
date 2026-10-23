@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Sök
+description: Sök bland nyheter, bildreportage och sidor på Sicklaslussens webbplats
+pagefind: true
+pagefindIgnore: true
+---
+
+<h1>Sök</h1>
+
+<p>Sök bland nyheter, bildreportage och sidorna på webbplatsen.</p>
+
+<div class="search" id="search">
+  <noscript><p>Sökfunktionen kräver JavaScript. Du kan i stället bläddra i
+  <a href="{{ '/nyheter/' | url }}">nyheterna</a> eller
+  <a href="{{ '/bildreportage/' | url }}">bildreportagen</a>.</p></noscript>
+</div>
+
+<script src="{{ '/pagefind/pagefind-ui.js' | url }}" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof PagefindUI !== "function") return;
+    new PagefindUI({
+      element: "#search",
+      bundlePath: "{{ '/pagefind/' | url }}",
+      baseUrl: "{{ '/' | url }}",
+      showSubResults: false,
+      translations: {
+        placeholder: "Sök på webbplatsen",
+        clear_search: "Rensa",
+        load_more: "Visa fler resultat",
+        search_label: "Sök på webbplatsen",
+        filters_label: "Filter",
+        zero_results: "Inga träffar för [SEARCH_TERM]",
+        many_results: "[COUNT] träffar för [SEARCH_TERM]",
+        one_result: "1 träff för [SEARCH_TERM]",
+        alt_search: "Inga träffar för [SEARCH_TERM]. Visar resultat för [DIFFERENT_TERM] i stället:",
+        search_suggestion: "Inga träffar för [SEARCH_TERM]. Prova något av följande:",
+        searching: "Söker efter [SEARCH_TERM] …"
+      }
+    });
+  });
+</script>

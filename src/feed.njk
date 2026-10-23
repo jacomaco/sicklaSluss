@@ -1,0 +1,28 @@
+---
+permalink: /nyheter/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }} – Nyheter</title>
+  <subtitle>{{ site.description }}</subtitle>
+  <link href="{{ site.url }}/nyheter/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/nyheter/"/>
+  <id>{{ site.url }}/nyheter/</id>
+  <updated>{{ (collections.news | reverse | first).date | dateToRfc3339 }}</updated>
+  <author>
+    <name>{{ site.title }}</name>
+    <email>{{ site.email }}</email>
+  </author>
+  {%- for post in collections.news | reverse %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    {%- if post.data.summary %}
+    <summary>{{ post.data.summary }}</summary>
+    {%- endif %}
+  </entry>
+  {%- endfor %}
+</feed>

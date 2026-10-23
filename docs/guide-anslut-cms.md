@@ -5,6 +5,11 @@ webbplatsen (nyheter, bildreportage, artiklar eller sidor) via webbredigeraren
 **Pages CMS**. Du behöver inte kunna programmering. Det enda du behöver är en
 e-postadress.
 
+När du har kommit in finns en separat guide för det löpande arbetet:
+[guide-innehall-och-bilder.md](guide-innehall-och-bilder.md). Den beskriver hur
+du uppdaterar sidor, nyheter, kalendarium, bildreportage och bilder – inklusive
+hur du väljer omslagsbild och vad du gör när en bild ska bytas ut.
+
 Du gör tre saker, i ordning:
 
 1. **Skapa ett GitHub-konto** (cirka fem minuter).
@@ -84,6 +89,7 @@ gång per projekt, se bilaga). Därefter gör varje redaktör så här:
    - **Bildreportage** – skapa/ändra fotoalbum.
    - **Artiklar** – hantera artikelarkivet.
    - **Sidorna** (Att slussa, Historik, Om föreningen, In English, …).
+   - **Kalendarium** – säsong, öppettider och slussdagar.
    - **Webbplatsinställningar** – meny, telefonnummer, e-post, sponsorer.
 
    > Se [Del 4](#del-4--testa-att-det-fungerar) för exakt hur en redigering går till.
@@ -120,6 +126,8 @@ Gör en första provändring så att du är säker på att allt fungerar:
 |---|---|
 | **Publicera en nyhet** | Nyheter → **Ny nyhet** → fyll i rubrik, datum, sammanfattning och text → Spara |
 | **Lägga upp ett bildalbum** | Bildreportage → **Nytt album** → rubrik, datum och mappnamn, ladda sedan upp bilderna i mediabiblioteket **Bildreportagebilder** (i samma mappnamn) → Spara |
+| **Byta omslagsbild på ett album** | Bildreportage → öppna albumet → fyll i **Omslagsbild** med bildens exakta filnamn → Spara. Lämna fältet tomt för att använda första bilden. |
+| **Uppdatera kalendarium/öppettider** | Kalendarium → uppdatera år, säsong och slussdagar på svenska och engelska → Spara |
 | **Lägga till en artikel** | Artiklar → **Ny artikel** → fält för rubrik, datum, typ (A/I/N), sektion (ny/ark) och eventuell fil via mediabiblioteket **Dokument** → Spara |
 | **Ändra en sida** | hitta sidan under **Sidorna** och redigera texten direkt |
 | **Lägga upp en bild** | I redigeraren finns ett mediabibliotek (bildikonen) – ladda upp och infoga |

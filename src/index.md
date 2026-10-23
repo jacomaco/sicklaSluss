@@ -7,7 +7,7 @@ description: Sicklaslussen – vattenförbindelsen till Sickla och Järlasjön. 
 <h1>Sicklaslussen<br>
 <small>vattenförbindelsen till Sickla och Järlasjön</small></h1>
 
-<img class="lead-img" src="{{ '/static/images/Slussbild_009.jpg' | url }}" alt="Sicklaslussen">
+<img class="lead-img" src="{{ '/static/images/Slussbild_009.jpg' | url }}" alt="Sicklaslussen" width="472" height="250" decoding="async" fetchpriority="high">
 
 <p>Sicklaslussen är en handmanövrerad sluss som förbinder Hammarby Sjö / Saltsjön med Sicklasjön och Järlasjön.</p>
 

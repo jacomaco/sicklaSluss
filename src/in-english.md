@@ -1,20 +1,24 @@
 ---
 layout: base.njk
+lang: en
 title: In English
 description: Welcome to Sicklaslussen – a hand-operated canal lock in Stockholm
 h1: Welcome to Sicklaslussen
 leadImage: /static/images/in-english/Lock_001.jpg
 leadImageAlt: Sicklaslussen
+leadImageWidth: 350
+leadImageHeight: 134
 ---
 
 Sicklaslussen is a historic, hand-operated canal lock in Stockholm that connects Hammarby Sjö / Saltsjön with Sicklasjön and Järlasjön. The waterway – known as "Järlaleden" – has been used by boaters since the Viking age.
 
-The lock is open for boating **May 10 – September 27**. During this period there is free drop-in passage on Saturdays 10:30–11:30 and 16:00–17:00. At other times passage can be booked on our lock telephone: [070-7816547](tel:+46707816547).
+The lock is open for boating **{{ kalendarium.english.seasonStart }} – {{ kalendarium.english.seasonEnd }}**. During this period there is free drop-in passage on {{ kalendarium.english.openingHours }}. At other times passage can be booked on our lock telephone: [070-7816547](tel:+46707816547).
 
 ## Exhibition days (Slussdagar)
 
-- May 23 – free passage 10:00–16:00
-- August 30 – free passage 10:00–16:00, with guided electric-boat tours between Hammarby Sjöstad and Järlasjön
+<ul class="calendar-list">
+{% for event in kalendarium.english.events %}<li><strong>{{ event.date }}</strong> – {{ event.text }}</li>{% endfor %}
+</ul>
 
 ## More information
 
