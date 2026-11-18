@@ -6,8 +6,8 @@ description: Föreningen Sicklaslussen – ideell förening som räddat och för
 
 <h1>Föreningen Sicklaslussen</h1>
 
-<img src="{{ '/static/images/om-foreningen/Om_foreningen_001.gif' | url }}" alt="Föreningen Sicklaslussen">
-<img src="{{ '/static/images/om-foreningen/Vykort_0001.jpg' | url }}" alt="Vykort – Sicklaslussen">
+<img src="{{ '/static/images/om-foreningen/Om_foreningen_001.gif' | url }}" alt="Föreningen Sicklaslussen" width="250" height="183" decoding="async">
+<img src="{{ '/static/images/om-foreningen/Vykort_0001.jpg' | url }}" alt="Vykort – Sicklaslussen" width="250" height="177" loading="lazy" decoding="async">
 
 <p>Föreningen Sicklaslussen bildades <strong>1980</strong> på initiativ av bl.a. Gunnar Rosberg i syfte att rädda slussen för framtiden. Vid denna tid fanns nämligen långt framskridna planer på att fylla igen den nyligen stängda slussen. Hoten förvärrades i mitten av 1990-talet vid projekteringen av Södra Länken, men efter aktivt informationsarbete kunde Sicklaslussen återigen räddas genom en omfattande ombyggnad, bl.a. resulterade i ytterligare ett slusskar.</p>
 

@@ -29,8 +29,8 @@ html {
 }
 
 .skip-link {
-  position: absolute;
-  left: -9999px;
+  position: fixed;
+  left: 0;
   top: 0;
   z-index: 1100;
   padding: 10px 16px;
@@ -40,17 +40,27 @@ html {
   border-radius: 0 0 6px 0;
 }
 
-.skip-link:focus {
-  left: 0;
+.skip-link:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
 }
 
 main:focus {
   outline: none;
 }
 
-/* Markera att en länk öppnas i nytt fönster (utan att skärmläsaren läser pilen) */
+/* Markera att en länk öppnas i nytt fönster (skärmläsare får en förklaring,
+   inte piltecknet). Första deklarationen är reserv för äldre webbläsare. */
 a[target="_blank"]::after {
-  content: " ↗" / "";
+  content: " ↗";
+  content: " ↗" / " (öppnas i nytt fönster)";
   font-size: 0.9em;
 }
 
@@ -138,42 +148,37 @@ body {
   color: var(--navy);
 }
 
+/* Menyknappen visas bara när JavaScript är aktivt – annars är menyn alltid
+   öppen, så innehållet går att nå även utan JS. */
 .nav-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.nav-toggle-label {
-  display: flex;
+  display: none;
   align-items: center;
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
+  font: inherit;
   font-weight: bold;
   color: var(--navy);
   background: var(--bg-soft);
   user-select: none;
 }
 
-.nav-toggle-label .burger {
+.js .nav-toggle {
+  display: flex;
+}
+
+.nav-toggle .burger {
   margin-right: 8px;
   font-size: 1.15rem;
 }
 
-.nav-toggle:focus-visible + .nav-toggle-label {
-  outline: 2px solid var(--navy);
-  outline-offset: 2px;
-}
-
 .nav-collapsible {
-  display: none;
   margin-top: 12px;
 }
 
-.nav-toggle:checked ~ .nav-collapsible {
-  display: block;
+.js .nav-toggle[aria-expanded="false"] + .nav-collapsible {
+  display: none;
 }
 
 .nav-list {
@@ -375,6 +380,15 @@ body {
   margin-bottom: 6px;
 }
 
+.content .calendar-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content .calendar-list li {
+  margin-bottom: 6px;
+}
+
 .content h1 small {
   display: block;
   font-size: 0.62em;
@@ -419,12 +433,15 @@ ul.articles li {
     order: -1;
   }
 
-  .nav-toggle-label {
+  .js .nav-toggle {
     display: none;
   }
 
-  .nav-collapsible {
+  .js .nav-toggle[aria-expanded="false"] + .nav-collapsible {
     display: block;
+  }
+
+  .nav-collapsible {
     margin-top: 0;
   }
 }
@@ -502,11 +519,6 @@ ul.articles li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.2s ease;
-}
-
-.album-card a:hover .album-cover {
-  transform: scale(1.03);
 }
 
 .album-name {
@@ -547,13 +559,33 @@ ul.articles li {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .gallery-item:hover img.gallery-thumb,
 .gallery-item:focus img.gallery-thumb {
   opacity: 0.85;
-  transform: scale(1.02);
+}
+
+/* Skalningen är en rörelseeffekt – körs bara om användaren inte bett om
+   minskad rörelse. Opacitetsändringen ovan behålls alltid. */
+@media (prefers-reduced-motion: no-preference) {
+  .album-cover {
+    transition: transform 0.2s ease;
+  }
+
+  .album-card a:hover .album-cover {
+    transform: scale(1.03);
+  }
+
+  .gallery-item img.gallery-thumb {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .gallery-item:hover img.gallery-thumb,
+  .gallery-item:focus img.gallery-thumb {
+    transform: scale(1.02);
+  }
 }
 
 .back-link {
@@ -561,24 +593,41 @@ ul.articles li {
   margin-bottom: 0.5rem;
 }
 
-/* Ljuslåda */
-body.lb-open {
-  overflow: hidden;
-}
-
+/* Ljuslåda – native <dialog> i modalt läge. Top layer, fokusfång och Esc
+   sköts av webbläsaren; klick på den mörka ytan stängs i lightbox.js. */
 .lightbox {
-  display: none;
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 12px;
+  border: 0;
   background: rgba(0, 0, 0, 0.92);
+  color: #fff;
   align-items: center;
   justify-content: center;
-  padding: 12px;
 }
 
-.lightbox.open {
+.lightbox[open] {
   display: flex;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.lightbox:modal {
+  overscroll-behavior: contain;
+}
+
+/* Fokusmarkeringen måste synas mot den mörka bakgrunden */
+.lightbox :focus-visible {
+  outline-color: #fff;
 }
 
 .lb-stage {

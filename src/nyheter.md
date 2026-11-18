@@ -21,7 +21,7 @@ description: Aktuella nyheter från Föreningen Sicklaslussen
 {% for post in collections.news | reverse %}
   <li>
     <h2 class="news-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-    <p><span class="newsdate">{{ post.date | shortDate }}</span></p>
+    <p><time class="newsdate" datetime="{{ post.date | dateToISO }}">{{ post.date | shortDate }}</time></p>
     {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
     <p class="readmore"><a href="{{ post.url | url }}">Läs mer …</a></p>
   </li>

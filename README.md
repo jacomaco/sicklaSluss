@@ -47,7 +47,7 @@ sicklaSluss/
     ├── _data/site.json      # Webbplatsuppgifter, meny, telefonnummer, sponsorer
     ├── _data/kalendarium.json # Öppettider och slussdagar (år, datum, evenemang)
     ├── _includes/           # Layout och partials (header/nav/sidebar/footer)
-    ├── assets/              # CSS + JS (ljuslåda för bildalbum)
+    ├── assets/              # CSS + JS (meny och ljuslåda för bildalbum)
     ├── images/bildreportage/# Originalfoton per album (byggs ned av eleventy-img)
     ├── static/images/       # Alla övriga bilder (logga, slussbilder, sponsorer)
     ├── static/pdf/          # PDF:er läggs här

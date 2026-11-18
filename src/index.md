@@ -19,7 +19,7 @@ description: Sicklaslussen – vattenförbindelsen till Sickla och Järlasjön. 
 {% for post in collections.news | reverse | limit(3) %}
   <li>
     <h3 class="news-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
-    <p><span class="newsdate">{{ post.date | shortDate }}</span></p>
+    <p><time class="newsdate" datetime="{{ post.date | dateToISO }}">{{ post.date | shortDate }}</time></p>
     {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
     <p class="readmore"><a href="{{ post.url | url }}">Läs mer …</a></p>
   </li>

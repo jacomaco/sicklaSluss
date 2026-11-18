@@ -23,7 +23,7 @@ description: Bildreportage från Sicklaslussen – album läggs upp fortlöpande
             {% endif %}
             <span class="album-name">{{ album.data.title }}</span>
             <span class="album-meta">
-              {% if album.data.period != "historiskt" %}{{ album.data.date | readableDate }} · {% endif %}
+              {% if album.data.period != "historiskt" %}<time datetime="{{ album.data.date | dateToISO }}">{{ album.data.date | readableDate }}</time> · {% endif %}
               {{ images | length }} {% if images | length == 1 %}bild{% else %}bilder{% endif %}
             </span>
           </a>

@@ -5,7 +5,7 @@ layout: base.njk
 
 <h1>{{ title }}</h1>
 {% if period != "historiskt" %}
-<p class="newsdate">{{ date | readableDate }}</p>
+<p class="newsdate"><time datetime="{{ date | dateToISO }}">{{ date | readableDate }}</time></p>
 {% endif %}
 
 {% set images = folder | albumImages %}

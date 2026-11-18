@@ -36,22 +36,22 @@ description: Ångslupar – passagerartrafik på Hammarby Sjö och Sicklasjön. 
 <p>Byggd 1913 av Schuberts varv, Saltsjöbaden, baserat på skrov från Korlin &amp; Ström, Borlänge. 13,75 x 3,21 m. Motorfartyg/motorslup – har alltså aldrig drivits med ånga. Levererades till Ångbåts AB Södertörn. Köptes 1914 av Waxholms Nya Ångfartygs AB men kom inte i trafik utan låg upplagd 1914–1935. Upprustades 1936 och åter satt i trafik som "Ran". Såldes omkring 1971 till Vaxholms Hotell och sedan såld igen till Bogesund. Inköptes av nuvarande ägare 1991, efter att ha legat till försäljning på land. Är nu efter omfattande renoveringsarbete i charter- och beställningstrafik, samt vid speciella tillfällen i turtrafik enligt tidtabell, på Järlasjön, Sicklasjön, Hammarby Sjö med omgivande vatten (se <a href="http://www.ran.se" target="_blank" rel="noopener noreferrer">www.ran.se</a>).</p>
 
 <figure class="hist-figure">
-  <img src="{{ '/static/images/historik/slupar/Ran_193x.jpg' | url }}" alt="Ran på 30-talet i Waxholms Nya Ångfartygs ABs regi" loading="lazy">
+  <img src="{{ '/static/images/historik/slupar/Ran_193x.jpg' | url }}" alt="" width="469" height="206" loading="lazy" decoding="async">
   <figcaption>Ran på 30-talet i Waxholms Nya Ångfartygs ABs regi</figcaption>
 </figure>
 
 <figure class="hist-figure">
-  <img src="{{ '/static/images/historik/slupar/Ran_vaxholm.jpg' | url }}" alt="Ran i Vaxholm" loading="lazy">
+  <img src="{{ '/static/images/historik/slupar/Ran_vaxholm.jpg' | url }}" alt="" width="469" height="240" loading="lazy" decoding="async">
   <figcaption>Ran i Vaxholm</figcaption>
 </figure>
 
 <figure class="hist-figure">
-  <img src="{{ '/static/images/historik/slupar/Ran_innan_renov_1992.jpg' | url }}" alt="Ran före renoveringen 1992" loading="lazy">
+  <img src="{{ '/static/images/historik/slupar/Ran_innan_renov_1992.jpg' | url }}" alt="" width="469" height="250" loading="lazy" decoding="async">
   <figcaption>Ran före renoveringen 1992</figcaption>
 </figure>
 
 <figure class="hist-figure">
-  <img src="{{ '/static/images/historik/slupar/Ran_2003_Jarla.jpg' | url }}" alt="Ran vid Järla Sjö 2003" loading="lazy">
+  <img src="{{ '/static/images/historik/slupar/Ran_2003_Jarla.jpg' | url }}" alt="" width="469" height="242" loading="lazy" decoding="async">
   <figcaption>Ran vid Järla Sjö 2003</figcaption>
 </figure>
 

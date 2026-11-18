@@ -17,6 +17,16 @@ function slugifyFilename(name) {
     .replace(/-+/g, "-");
 }
 
+// Escapa värden som skrivs in i HTML-attribut (t.ex. alt-text med citattecken
+// från en rubrik i CMS:et).
+function escapeAttr(value) {
+  return String(value == null ? "" : value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function albumImageOptions(folder, file, widths) {
   return {
     outputDir: ALBUM_OUT,
@@ -50,7 +60,7 @@ async function albumImg(folder, file, alt) {
       `<picture>`,
       `<source type="image/webp" srcset="${thumbWebp.url} 1x">`,
       `<img class="gallery-thumb" src="${thumbJpeg.url}" width="${thumbJpeg.width}"`,
-      ` height="${thumbJpeg.height}" alt="${alt}" loading="lazy" decoding="async">`,
+      ` height="${thumbJpeg.height}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`,
       `</picture></a>`,
     ].join("");
   } catch (e) {
@@ -71,7 +81,7 @@ async function albumCover(folder, file, alt) {
       `<picture>`,
       `<source type="image/webp" srcset="${webp.url}">`,
       `<img class="album-cover" src="${jpeg.url}" width="${jpeg.width}" height="${jpeg.height}"`,
-      ` alt="${alt}" loading="lazy" decoding="async">`,
+      ` alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`,
       `</picture>`,
     ].join("");
   } catch (e) {

@@ -7,14 +7,13 @@
   var items = Array.prototype.slice.call(root.querySelectorAll("a.gallery-item"));
   if (!items.length) return;
 
-  var lb = document.createElement("div");
+  // Native <dialog>: webbläsaren sköter top layer, inert bakgrund,
+  // fokusfång, Esc/backstängning och återlämning av fokus.
+  var lb = document.createElement("dialog");
   lb.className = "lightbox";
-  lb.setAttribute("role", "dialog");
-  lb.setAttribute("aria-modal", "true");
   lb.setAttribute("aria-label", "Bildvisning");
-  lb.setAttribute("tabindex", "-1");
   lb.innerHTML =
-    '<button class="lb-close" type="button" aria-label="Stäng">&times;</button>' +
+    '<button class="lb-close" type="button" aria-label="Stäng" autofocus>&times;</button>' +
     '<button class="lb-prev" type="button" aria-label="Föregående bild">&#10094;</button>' +
     '<button class="lb-next" type="button" aria-label="Nästa bild">&#10095;</button>' +
     '<figure class="lb-stage"></figure>' +
@@ -23,11 +22,9 @@
 
   var stage = lb.querySelector(".lb-stage");
   var caption = lb.querySelector(".lb-caption");
-  var closeBtn = lb.querySelector(".lb-close");
   var prevBtn = lb.querySelector(".lb-prev");
   var nextBtn = lb.querySelector(".lb-next");
   var current = 0;
-  var lastFocused = null;
   var preloaded = {};
 
   function preload(i) {
@@ -45,44 +42,31 @@
     current = (i + items.length) % items.length;
     var a = items[current];
     var itemImg = a.querySelector("img");
-    var alt = (itemImg && itemImg.getAttribute("alt")) || "";
     var webp = a.getAttribute("data-webp");
-    stage.innerHTML =
-      "<picture>" +
-      (webp ? '<source type="image/webp" srcset="' + webp + '">' : "") +
-      '<img class="lb-img" src="' + a.getAttribute("href") + '" alt="' + alt + '" decoding="async">' +
-      "</picture>";
+
+    var picture = document.createElement("picture");
+    if (webp) {
+      var source = document.createElement("source");
+      source.type = "image/webp";
+      source.srcset = webp;
+      picture.appendChild(source);
+    }
+    var img = document.createElement("img");
+    img.className = "lb-img";
+    img.src = a.getAttribute("href");
+    img.alt = (itemImg && itemImg.getAttribute("alt")) || "";
+    img.decoding = "async";
+    picture.appendChild(img);
+    stage.replaceChildren(picture);
+
     caption.textContent = current + 1 + " av " + items.length;
     preload(current + 1);
     preload(current - 1);
   }
 
-  function setBackgroundInert(value) {
-    Array.prototype.forEach.call(document.body.children, function (el) {
-      if (el === lb) return;
-      if (value) el.setAttribute("inert", "");
-      else el.removeAttribute("inert");
-    });
-  }
-
   function show(i) {
-    lastFocused = document.activeElement;
     render(i);
-    lb.classList.add("open");
-    document.body.classList.add("lb-open");
-    setBackgroundInert(true);
-    closeBtn.focus();
-  }
-
-  function close() {
-    lb.classList.remove("open");
-    document.body.classList.remove("lb-open");
-    stage.innerHTML = "";
-    setBackgroundInert(false);
-    if (lastFocused && typeof lastFocused.focus === "function") {
-      lastFocused.focus();
-    }
-    lastFocused = null;
+    lb.showModal();
   }
 
   items.forEach(function (a, idx) {
@@ -92,48 +76,31 @@
     });
   });
 
-  closeBtn.addEventListener("click", close);
   prevBtn.addEventListener("click", function () {
     render(current - 1);
   });
   nextBtn.addEventListener("click", function () {
     render(current + 1);
   });
+
+  // Klick på den mörka ytan (dialogens egen bakgrund) stänger
   lb.addEventListener("click", function (e) {
-    if (e.target === lb) close();
+    if (e.target === lb) lb.close();
+  });
+
+  // Rensa bilden när dialogen stängs (Esc, klick eller stängknappen)
+  lb.addEventListener("close", function () {
+    stage.replaceChildren();
   });
 
   document.addEventListener("keydown", function (e) {
-    if (!lb.classList.contains("open")) return;
-
-    if (e.key === "Escape") {
-      e.preventDefault();
-      close();
-      return;
-    }
+    if (!lb.open) return;
     if (e.key === "ArrowLeft") {
       render(current - 1);
       return;
     }
     if (e.key === "ArrowRight") {
       render(current + 1);
-      return;
-    }
-    if (e.key === "Tab") {
-      // Håll kvar fokus i dialogen
-      var focusables = [closeBtn, prevBtn, nextBtn];
-      var first = focusables[0];
-      var last = focusables[focusables.length - 1];
-      if (!lb.contains(document.activeElement)) {
-        e.preventDefault();
-        first.focus();
-      } else if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
     }
   });
 

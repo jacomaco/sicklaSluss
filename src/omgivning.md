@@ -11,10 +11,8 @@ description: Vad man kan hitta och göra i omgivningarna kring Sickla och Järla
 <p>› <a href="http://www.hammarbysjostad.se" target="_blank" rel="noopener noreferrer">Hammarby Sjöstad</a> – [extern länk till Sjöstadswebben]</p>
 
 <h2>Sickla Udde & Lugnet</h2>
-<p>› <a href="http://www.hammarbysjostad.se" target="_blank" rel="noopener noreferrer">Hammarby Sjöstad</a> – [extern länk till Sjöstadswebben]</p>
 
 <h2>Sickla Kanal</h2>
-<p>› <a href="http://www.hammarbysjostad.se" target="_blank" rel="noopener noreferrer">Hammarby Sjöstad</a> – [extern länk till Sjöstadswebben]</p>
 
 <h2>Sickla Strand</h2>
 <p>› <a href="http://www.sicklastrand.se/" target="_blank" rel="noopener noreferrer">Sickla Strand</a> – [extern länk till samlingssida för Sickla Strand]</p>

@@ -6,15 +6,17 @@ pagefind: true
 pagefindIgnore: true
 ---
 
-<h1>Sök</h1>
+<h1 id="search-heading">Sök</h1>
 
 <p>Sök bland nyheter, bildreportage och sidorna på webbplatsen.</p>
 
-<div class="search" id="search">
-  <noscript><p>Sökfunktionen kräver JavaScript. Du kan i stället bläddra i
-  <a href="{{ '/nyheter/' | url }}">nyheterna</a> eller
-  <a href="{{ '/bildreportage/' | url }}">bildreportagen</a>.</p></noscript>
-</div>
+<search>
+  <div class="search" id="search">
+    <noscript><p>Sökfunktionen kräver JavaScript. Du kan i stället bläddra i
+    <a href="{{ '/nyheter/' | url }}">nyheterna</a> eller
+    <a href="{{ '/bildreportage/' | url }}">bildreportagen</a>.</p></noscript>
+  </div>
+</search>
 
 <script src="{{ '/pagefind/pagefind-ui.js' | url }}" defer></script>
 <script>
@@ -39,5 +41,12 @@ pagefindIgnore: true
         searching: "Söker efter [SEARCH_TERM] …"
       }
     });
+
+    // Pagefind sätter bara placeholder/title på sökfältet, vilket inte är
+    // någon hållbar etikett. Knyt fältet till sidans synliga rubrik i stället.
+    var searchInput = document.querySelector(".pagefind-ui__search-input");
+    if (searchInput) {
+      searchInput.setAttribute("aria-labelledby", "search-heading");
+    }
   });
 </script>

@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
   {% set pageTitle = (title ~ " – " ~ site.title) if title else site.title %}
+  {% set chromeLang = "sv" if lang == "en" else false %}
   {% set pageDescription = description if description else ((title ~ " – " ~ site.title) if title else site.description) %}
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDescription }}">
@@ -36,6 +38,7 @@
   {% endif %}
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+  <script src="{{ '/assets/js/nav.js' | url }}" defer></script>
   {% if pagefind %}
   <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
   {% endif %}
@@ -53,13 +56,13 @@
   </script>
 </head>
 <body{% if pagefindIgnore %} data-pagefind-ignore{% endif %}>
-  <a class="skip-link" href="#main">Hoppa till innehåll</a>
-  <header class="site-header">
+  <a class="skip-link" href="#main"{% if chromeLang %} lang="{{ chromeLang }}"{% endif %}>Hoppa till innehåll</a>
+  <header class="site-header"{% if chromeLang %} lang="{{ chromeLang }}"{% endif %}>
     {% include "partials/header.njk" %}
   </header>
 
   <div class="layout">
-    <nav class="sidebar sidebar-left" aria-label="Huvudmeny">
+    <nav class="sidebar sidebar-left" aria-label="Huvudmeny"{% if chromeLang %} lang="{{ chromeLang }}"{% endif %}>
       {% include "partials/nav.njk" %}
     </nav>
 
@@ -71,7 +74,7 @@
       {{ content | safe }}
     </main>
 
-    <aside class="sidebar sidebar-right">
+    <aside class="sidebar sidebar-right"{% if chromeLang %} lang="{{ chromeLang }}"{% endif %}>
       {% include "partials/sidebar.njk" %}
     </aside>
   </div>
