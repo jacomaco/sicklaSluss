@@ -22,6 +22,7 @@
 
   var stage = lb.querySelector(".lb-stage");
   var caption = lb.querySelector(".lb-caption");
+  var closeBtn = lb.querySelector(".lb-close");
   var prevBtn = lb.querySelector(".lb-prev");
   var nextBtn = lb.querySelector(".lb-next");
   var current = 0;
@@ -76,6 +77,9 @@
     });
   });
 
+  closeBtn.addEventListener("click", function () {
+    lb.close();
+  });
   prevBtn.addEventListener("click", function () {
     render(current - 1);
   });
